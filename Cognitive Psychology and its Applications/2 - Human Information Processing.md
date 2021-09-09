@@ -30,7 +30,7 @@ For example, one would like to know how do we reconstruct 3D information from 2D
 
 Of course there also are **pictorial cues**, often used by artists. One of them is **linear perspective** (you have two lines going away from you, they seem to get near), **relative size** (perspective gives us hints about size), **interposition** (if an object is in front of another, it's closer), **light and shading** (gives us a lot of info about 3D) and **textural gradients** (if you look at the trees they seem to get denser).
 
-![pictorial cues](./res/pictorial cues.png)
+![pictorial cues](./res/pictorial\ cues.png)
 
 ### Gestalt laws of grouping
 
