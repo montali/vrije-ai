@@ -75,3 +75,53 @@ This is the reason traffic lights work: you're attaching a certain action to a c
 All these different ways to select information can be quite complex: one task that we're constantly engaged in is **visual search**, for example to find an orange cup on a desk. By doing this research, we can actually figure out how the sampling works. There are two types of search, one is called **feature search** and the other is **conjunction search**. The first is easy: if you're looking for a blue circle, you'll be really quick in finding it if it's unique. There's feature maps in our brain from which we're able to extract features that we need. This is very efficient. If you have to search again for the blue circle, but it's now surrounded by distractors (blue rectangles, for example), you'll find it way more difficult. You'll have to **integrate information from different feature maps**, in this case shape and color!
 
 ![feature-vs-conjunction](./res/feature-vs-conjunction.png)
+
+This task can help us understand **what drives information processing**.
+
+Usually we search for quite complex scenes. In the tulip example, it pops out pretty fast, and our attention is automatically guided to its location. This kind of **guidance** is called *bottom-up guidance*: the scene is guiding your attention towards something, it's not yourself or someone asking you.
+
+Already in the 60s/70s, scientists figured out that there were **feature maps** in our neural cortex (as in neural networks). When you go from the image to the visual cortex, the different maps contain differnet informations, colors, intensities, orientations...
+
+The next step would be integrating all of these information into one **master salience map**, which is agnostic to which dimension an item is salient, it just pulls information from the different feature maps.
+
+After you did all this computation, focal attention goes on from one place to another, scan...
+
+Of course that's not the whole story: we won't look at the tulip forever. If we were asked to look for butterfly, we would be still pretty fast in finding it. This is known as **top-down**, as we are instructed to look for something.
+
+The difference between top-down and bottom-up is therefore that in the latter, **the scene guides you**.
+
+**Selection history** is about our bias towards the past choices. For example, if in two consecutive experiments, we were first asked to look for a red circle, then in the second experiment we had a red distractor, the second experiment would go pretty bad as we'd still look for the red target and not the real one. The distractor produces a **bottom-up** capture: the person was instructed to look for the real target (*top-down*), but the attention went automatically to the other one.
+
+Recently, a third dimension could be inserted: we're not talking about top-down and bottom-up anymore. The new conceptual model features 3 competing sources: **current goals**, **physical salience** (what was bottom-up before) and **history effects**.
+
+![selection-bias](./res/selection-bias.png)
+
+Another important *force* is linked to **context**: when we know we're in the right context, we know where things are. If we know we parked our car, we won't look for it in the air, just in the parking spots. Context provides you with a certain framework/hypothesis so that you immediately know the expected results.
+
+We can summarize and say that our selection/attention is basically **competition among different forces**: *current goals, selection history, physical salience and scene context.*
+
+## Memory
+
+The next cognitive function we'll briefly introduce is **memory**, having its own capacity and limitations. 
+
+Things change really quickly, so it would be nice to store information. Research has shown that we first have a very bried representation (short term sensory store) when the information comes in from our retina. That's what we call *iconic memory*, almost as we were taking a picture. In order to hold on to that information, we need to encode it: that's where **visual working memory** comes in. The neurons are firing to encode the information. Of course, that's costing us quite a long amount of energy, so we need something which is **long term**, being able to retrieve it when we want it. This is stored in a *passive way*, we don't need to actually maintain it alive. 
+
+The idea of **iconic memory** has emerged in the 1960s, demonstrated by *Sperling*. How did he do that? He presented participants with a matrix of letters, flashed very briefly (50ms) and he asked participants to report them. They could report about 4. But he came up with something clever: he asked them to report letters from a certain row (asking a given row **after showing the letters**). What he found is that participants were now able to report 3 to 4 letters from *any row* (retaining almost all information, 75%). 
+
+He did experiments to show that the timing from the disappearance of the display and the indication of the row is **critical**: the information starts to decay as soon as its gone from the screen. For the whole report, participants were able to hold on about 4 letters (independent of the delay of the tone, but limited in capacity). For the partial report, participants started off from 9 letters, and if the delay was higher, it dropped off to the whole report capacity.
+
+![sperling-1960](./res/sperling-1960.png)
+
+Unlike sensory memory, working memory is resistant to things like eye movement, blinks, other interruptions...
+
+To summarize, visual working memory is a limited amount of information that is maintained online/readily accessible.
+
+Our brain has persistent and content-specific activity, from which we can actually decode what's happening basing on the active zone:
+
+![brain-areas](./res/brain-areas.png)
+
+What's important is that information is **distributed** and **redundant**. Why do we need that? Working memory seems to work as a gradient: depending on the task, we can use different levels of representation. If we need high accuracy, then we may use lower regions of the brain (like visual cortex), but if you have a very complex task (like selection of goals, plans...) then you may actually use higher order brain areas, like movement planning areas. Basically you can use different regions in a very flexible way. This is even **more resistant to interference**: information encoded in the visual cortex is highly supsceptible to interference. If distractions come along, how do you hold on to the right information? This is a very highly efficient way of coding information. 
+
+Using *EEG* (Electro EncephaloGram, in which electrodes are placed on your scalp to get the brain activity) we can measure many things, among which is *Contralateral Delay Activity*. In the pictured experiment, people had to memorize the positions of squares, waited 900ms, then had to remember what changed. In this case, contralateral delay activity it showed that on the contralateral side (left) there was a negative level. If you measure the difference between contralateral and ipsalateral you get these graphs. This marker has been shown to **reflect hwo many items you are able to hold in working memory**. If you hold lots of items, this activity would be higher. If you then ask participants to maintain more objects in working memory, you'll see that this level does not increase. Based on this, research concluded that **capacity limit** is set at **four objects**. It's probably not about objects, rather about resources you have to maintain in your memory. This is an interesting method that allows you to measure how much information a person is retaining into their working memory. 
+
+The last thing we'll talk about is **long term memory**, supposedly having no capacity limitation. One study that showed that found participants having to memorize links between different faces and different scenes. They could memorize 3-400 links, telling which face was connected to which scene. What they found is that **hippocampus** was active in this task, but it did not really represent whether the person was correct or not. Hippocampus activation was then linked to whether the person **looked at the right person**. Unconscious information can definitely **bias us** in choosing something, even if we don't realize. 
