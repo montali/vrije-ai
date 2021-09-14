@@ -2,11 +2,11 @@
 
 HIP has lots of advantages but limitations too: you can build the best system in the world, but if the HIP cannot process it, you have a useless system.
 
-Our brain has inputs/outputs (for example, eyes process light and informations reach the back of the brain, which propagate to other sides of the brain later), specialized areas that deal with these inputs. We also have outputs, like the frontal lobe which is sending signals to muscles. Besides these inputs and outputs, there's lots of processing, and higher cognitive functions (attention, memory, decision-making) are not usually contained in **one specific area**: generally, they are widely distributed.
+Our brain has inputs/outputs (for example, eyes process light and information reach the back of the brain, which propagate to other sides of the brain later), specialized areas that deal with these inputs. We also have outputs, like the frontal lobe which is sending signals to muscles. Besides these inputs and outputs, there's lots of processing, and higher cognitive functions (attention, memory, decision-making) are not usually contained in **one specific area**: generally, they are widely distributed.
 
 Some parts of the brain are more involved than others: for example, the parietal lobe has been linked to attention. ![brain](./res/brain.png)
 
-Generally, we'll want to talk about how sensor information is fed to **perception** (first _software layer_ in our brain), i.e. systems that help us to make _interpretations out of information_. After the information is parsed, we can actually process it in detail (selective information) and eventually to decision making.
+Generally, we'll want to talk about how sensor information is fed to **perception** (first _software layer_ in our brain), i.e. systems that help us to make _interpretations out of information_. After the information is parsed, we can actually process it in detail (selective information) and eventually to decision-making.
 
 Of course, memory allows us to have continuity in our decisions. We have two types of memory, **working memory** (active state, constantly available, like a RAM) and **long-term memory** (indefinite time of storage, very large capacity). Things that we have in memory also **bias** our information processing!
 
