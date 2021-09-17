@@ -4,7 +4,9 @@ When you start solving a problem, the first step is finding a good **representat
 
 An example of these two options: if you think about phenotypes being positive integers, and genotypes being binary strings, you could use the usual binary representation. We though have a problem of discontinuity: if you consider 7 and 8, the integers are near, but the binaries are not. To solve this, you can use another mapping: _gray code_.
 
-This introduces the **strong causality principle**: _small alterations in the underlying structures should only cause small changes to the effect_. If you didn't have this, evolutionary search would just be randomly changing.
+This introduces the **strong causality principle**: _small alterations in the underlying structures should only cause small changes to the effect_. If you didn't have this, evolutionary search would just be randomly changing. This makes our *search space* way **smoother**: if that is not true, *anything could happen to the fitness with a small change!*
+
+**Reproduction** is the biological concept (top notion), if it's unary we're talking about **mutations**, while if it's multiple we're talking about **recombination**.
 
 ## Binary representation
 
