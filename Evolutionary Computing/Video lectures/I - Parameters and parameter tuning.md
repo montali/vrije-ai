@@ -12,15 +12,15 @@ The history of parameter tuning goes back many years. In 1986, a paper about met
 
 This sets the values **during the run**, having different mechanisms, using predetermined schedules or maybe heuristic feedback from the search process. It could even be encoded in the chromosomes and wait for natural selection to optimize them. This process also has problems: finding the optimal $p$ is hard, finding $p(t)$ even harder. It's still user-defined, and natural selection may even not be helpful.
 
-However, parameter control **offers a lot**: first of all, it allows us to change values during the run. Most important is that parameter control can *liberate* the user from tuning. The heuristic is less parameter-sensitive than the EA. 
+However, parameter control **offers a lot**: first of all, it allows us to change values during the run. Most important is that parameter control can _liberate_ the user from tuning. The heuristic is less parameter-sensitive than the EA.
 
-So, how did this go in history? As already said, in the beginning it was vague. The work is somehow skewed, as there's quite some attention on crossover and mutation parameters, but there's not much work concerned with selection and population sizes. A few papers tried to do it all, and created a *parameterless* algorithm. Tuning practice is *invisible*: nobody knows how much effort was necessary for a given paper. 
+So, how did this go in history? As already said, in the beginning it was vague. The work is somehow skewed, as there's quite some attention on crossover and mutation parameters, but there's not much work concerned with selection and population sizes. A few papers tried to do it all, and created a _parameterless_ algorithm. Tuning practice is _invisible_: nobody knows how much effort was necessary for a given paper.
 
 The big picture, conceptually, connects different layers: we have an **application layer** containing a problem, then we have an **algorithm layer** that is optimizing the application layer (may be a Generic Algorithm), and finally we have the **design layer**, trying to optimize the algorithm. The designer could be a **user** or an **algorithm too** (meta-GA). ![EA-flow](./res/EA-flow.png)
 
 There's also an information flow from bottom to top: the application layer is passing up quality information to the algorithm layer, while the algorithm layer is passing up information about the algorithm quality.
 
-Looking at the diagram we can see a hierarchy: on the lower level we have an application which is parametrized by candidate solution variables, and these vectors together form the *space of possible solutions*. Every point is being evaluated for fitness. On the upper level, we see a similar algorithm: we have a design method that searches the space of parameter vectors, leading to an Evolutionary Algorithm having design variables, algorithm parameters, strategy parameters. All the parameters together form this space, and one point belongs to **one EA instance**, having a *fitness* which is stating the performance of the algorithm. This landscape is different, and unlikely to be easily searched. There's some structure that allows us to do better then *random search*. 
+Looking at the diagram we can see a hierarchy: on the lower level we have an application which is parametrized by candidate solution variables, and these vectors together form the _space of possible solutions_. Every point is being evaluated for fitness. On the upper level, we see a similar algorithm: we have a design method that searches the space of parameter vectors, leading to an Evolutionary Algorithm having design variables, algorithm parameters, strategy parameters. All the parameters together form this space, and one point belongs to **one EA instance**, having a _fitness_ which is stating the performance of the algorithm. This landscape is different, and unlikely to be easily searched. There's some structure that allows us to do better then _random search_.
 
 ![upper-vs-lower](./res/upper-vs-lower.png)
 
@@ -28,13 +28,13 @@ On the lower part, things are easy: we have a pre-defined fitness function, whil
 
 We have to distinguish between **online** and **offline** calibration, which is basically the difference between **parameter tuning** and **parameter control**. Both have their advantages. Tuning is easier, immediately needed (you can't start without it). It still has parameters, and on the long run, if we tune many parameters on many landscapes, we may learn something about them. There are some indications that suggest that good tuning is usually better than good control.
 
-The basic insight here is that the **tuning problem is a search problem itself**. We can first use a **generate-and-test** approach, the easiest. The test happens running the EA, logging the performance in each run (looking at the quality or the speed). As the EA are stochastic, you have to repeat the algorithm multiple times. You may ask what's the minimum number of repetitions, heuristically set to 30. 
+The basic insight here is that the **tuning problem is a search problem itself**. We can first use a **generate-and-test** approach, the easiest. The test happens running the EA, logging the performance in each run (looking at the quality or the speed). As the EA are stochastic, you have to repeat the algorithm multiple times. You may ask what's the minimum number of repetitions, heuristically set to 30.
 
 ### Types of parameters
 
 Looking at **numeric parameters**, you can see interesting things going on during the EA execution. The search space is searchable, and we can plot the range of parameter values and performance. These have a sensible distance metric.
 
-On the other hand, **symbolic parameters** have **finite domain**, and there's no sensible distance metric, meaning that they are non-searchable. Sampling is our only option. Of course you can order these symbols and get some kind of search and plot. 
+On the other hand, **symbolic parameters** have **finite domain**, and there's no sensible distance metric, meaning that they are non-searchable. Sampling is our only option. Of course, you can order these symbols and get some kind of search and plot.
 
 The number of parameters is not known in advance: a given value of a parameter could change the number of the others. For example, if you decide to have a **tournament selection**, then you get a numeric parameter being the tournament size. This means that parameters can have a hierarchical structure, and you cannot simply denote the tuning search space algorithm by the intersection of domains: $S=Q_{1} \times \ldots Q_{m} \times R_{1} \times \ldots \times R_{n}$.
 
@@ -46,7 +46,7 @@ You can construct tables listing all the **symbolic** and **numeric** parameters
 
 Now, what is an EA **instance**? You have many definition options:
 
-- There is only one EA, and 4 instances; 
+- There is only one EA, and 4 instances;
 - An EA is just a combination of the symbolic parameters. The numerics represent instances. This implies that the table contains 3 EAs with two instances
 - An EA is a particular configuration of all parameters: EA and EA instance coincide. This means that the table contains 4 EAs/instances.
 
@@ -54,15 +54,15 @@ Now, what is an EA **instance**? You have many definition options:
 
 The simplest approach to generate-and-test is just creating the initial parameter vectors, test them, and terminate. This is known as **non-iterative**. If you add a selection of parameter vectors, we're talking about **multi-stage**, while if you dinamically generate parameter vectors we're talking about **iterative** generate-and-test.
 
-The computational effort is divided into several components: we have a number of *vectors tested*, the number of *tests you perform per vector* and finally the number of *fitness evaluation per test*.
+The computational effort is divided into several components: we have a number of _vectors tested_, the number of _tests you perform per vector_ and finally the number of _fitness evaluation per test_.
 
-The product of these may become pretty high. You can decide to optimize the first (*iterative search*), the second (*multi-stage search*), both the first and second (*combination*). You can even decide to optimize the last one, but that's not popular, neither done. 
+The product of these may become pretty high. You can decide to optimize the first (_iterative search_), the second (_multi-stage search_), both the first and second (_combination_). You can even decide to optimize the last one, but that's not popular, neither done.
 
 ### Optimizing the first
 
 The methods that optimally use A are only applicable to numeric parameters: you have a number of tested vectors which is not fixed, and you initialize your parameter vector set with $N<<A$ vectors then iterate. This is done in Meta-EA, SPO, and REVAC. A tip for assignments, take a look at **Sequential Parameter Optimization.**
 
-A method that was not taken further is **REVAC**: rather than just giving you a set of parameter vectors, it tries to give you insights about the landscape of their space. On the Y axis, you can see the iterations in the tuning method, and the Z method shows the **quality** of the parameter value. What you see is that when you begin tuning you don't know much, but as you gain more information you may discover good values. 
+A method that was not taken further is **REVAC**: rather than just giving you a set of parameter vectors, it tries to give you insights about the landscape of their space. On the Y axis, you can see the iterations in the tuning method, and the Z method shows the **quality** of the parameter value. What you see is that when you begin tuning you don't know much, but as you gain more information you may discover good values.
 
 ### Optimizing the second (reducing it)
 
@@ -76,9 +76,9 @@ There's an algorithm called **Meta-EA with Racing**, but the best one right now 
 
 We already know that there are differences between tuning algorithms: the maximum utility reached, the computational cost, the number of **their own** parameters (overhead costs), and the different insights they offer (some algorithm only give you a value, others tell you more about the landscape etc...)
 
-There are similarities too: most of them can find good parameters, and nobody is really using them. 
+There are similarities too: most of them can find good parameters, and nobody is really using them.
 
-The conclusion here is that **you have to tune your EAs**, and think of magic constnts (parameters hidden in the code). You have to decide between speed and quality, and between specialist and generalist EA.
+The conclusion here is that **you have to tune your EAs**, and think of magic constants (parameters hidden in the code). You have to decide between speed and quality, and between specialist and generalist EA.
 
 ## The future
 
@@ -93,4 +93,3 @@ Someone may ask what's better between GAs and EAs? A better question would be as
 - You have to tune **the right parameters**
 - Always make up your mind on whether you're tuning for **speed** or **quality**
 - **Any tuner** is better than no tuner
-

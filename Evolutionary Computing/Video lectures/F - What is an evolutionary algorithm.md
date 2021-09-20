@@ -2,13 +2,13 @@
 
 An **evolutionary algorithm** is based on a common model of evolutionary processes, like a **population of individuals**, each of them having a fitness, and a set of **reproduction operators** (mutation/crossover) that create new individuals. The **selection** then operates to achieve a higher overall fitness, through _survival of the fittest_ and _mating of the fittest_.
 
-If you look at Artificial Evolution processes, you can see two forces: one which is **increasing the diversity** (mutation/recombination, obtaining **novelty**), the other which is decreasing diversity (removing bad stuff by survival/mating selection) pushing towards quality. A good balance between these two forces is essential. It's important to denote that **selection operators** act on population, while **variation operators** act on individuals.
+If you look at Artificial Evolution processes, you can see two forces: one is **increasing diversity** (mutation/recombination, obtaining **novelty**), the other is decreasing it (removing bad stuff by survival/mating selection), pushing towards quality. A good balance between these two forces is essential. It's important to denote that **selection operators** act on population, while **variation operators** act on individuals.
 
-The general scheme is the following, having the **population as central element**, containing _n_ configurations for the 8-queens or _n_ routes for the TSP.![ec-model](./res/ec-model.png)
+The general schema is the following, having the **population as central element**, containing _n_ configurations for the 8-queens or _n_ routes for the TSP.![ec-model](./res/ec-model.png)
 
 The termination happens thanks to some **stopping criteria**. The cycle goes towards 3 different processes: we can **select parents** for reproduction, then apply the **variation operators** leading to a new set of individuals, formerly named **offspring**, having to compete with the existing individuals through **survivor selection**.
 
-The **phenotypes** are the objects in the original problem (for example, 8-queens configurations), the real things we want to encode, while the **genotypes** encode these (as DNA does). This code has to be easily manipulated. In CS we're used to talking about variables and values, while biologists talk in terms of genes and alleles.
+The **phenotypes** are the objects in the original problem (for example, 8-queens configurations), the real things we want to encode, while the **genotypes** encode these (as DNA does). This code has to be easily manipulatable. In CS we're used to talking about variables and values, while biologists talk in terms of genes and alleles.
 
 For example, a coding/decoding of genotype to phenotype would be the one in which the phenotype is an **integer**, and the genotype is its **binary encoding**.
 
@@ -28,7 +28,7 @@ The **variation operators** have the role of generating new candidate solutions,
 
 **Variation operators must match the given representation.**
 
-The **mutation operators** are unary, and the goal is creating **small, random variations**. The randomness is important, as often the heuristic mutation operators don't work that well.
+The **mutation operators** are unary, and the goal is creating **small, random variations**. The randomness is important as, often, the heuristic mutation operators don't work that well.
 
 The role of **recombination** is **merging information**, as to merge parents into offspring. The majority of the offspring may be worse, or the same, but it may happen that by combining elements of genotypes we obtain good traits. The worsening of the offspring is not bad: we still have selection to care about that.
 

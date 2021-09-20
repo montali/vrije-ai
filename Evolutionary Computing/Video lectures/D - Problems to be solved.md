@@ -1,6 +1,6 @@
 # Problems to be solved
 
-We'll now discuss different perspective to categorize problems.
+We'll now discuss different perspectives to categorize problems.
 
 ## Black box model
 
