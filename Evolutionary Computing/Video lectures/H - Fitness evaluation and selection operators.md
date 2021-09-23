@@ -106,7 +106,7 @@ f^{\prime}(i)=\frac{f(i)}{\sum_{j=1}^{\mu} \operatorname{sh}(d(i, j))} \quad \op
 \end{array}\right.
 $$
 
-The share is calculated for the individual's niche _friends_ only. If we had $sh(d)=1$, it would just be a count of the individuals in the niche.
+The share is calculated for the individual's niche _friends_ only. If we had $sh(d)=1$, it would just be a count of the individuals in the niche. Note that the distance to itself is 0, so the denominator will always be $\ge1$.
 
 ![fitness-sharing](./res/fitness-sharing.png)
 
@@ -114,7 +114,7 @@ Note that the reduction for 2 is bigger than the one 10 has.
 
 **Crowding** is another approach: it tries to distribute the individuals evenly among the niches, basing on the assumption that children will be close to parents. It uses a distance metric in either the phenotype or genotype space, taking two parents and 2 offspring, then making a _small tournament_ which sees one parent competing with a child, the other one with the other. To find these _families_, we have that $\mathrm{d}\left(\mathrm{p}_{1}, \mathrm{o}_{1}\right)+\mathrm{d}\left(\mathrm{p}_{2}, \mathrm{o}_{2}\right)<\mathrm{d}\left(\mathrm{p}_{1}, \mathrm{o}_{2}\right)+\mathrm{d}\left(\mathrm{p}_{2}, \mathrm{o}_{1}\right)$.
 
-The difference between these two approaches is the following: in _fitness sharing_, we'll see a higher number of individuals in the highest hills, while in _crowding_ the individuals are spread evenly throughout the hills.
+The difference between these two approaches is the following: in _fitness sharing_, we'll see a higher number of individuals in the highest hills, while in _crowding_ the individuals are spread evenly throughout the hills. There is no general-purpose answer to *which is better*, you just have to try them and check the performances during *preliminary testing*.
 
 ### Implicit approaches
 
@@ -146,3 +146,5 @@ Selection operators and diversity preserving operators often rely on **distance*
 - A particular selection operator could be used for **both**
 - **Selection pressure** is important: if it's too strong, we may go towards local optimums, if it's too weak, we may degrade to random search
 - **Diversity** is crucial, and there are mechanisms available to preserve it
+
+Note that **fitness function** and **objective function may not be the same**: for example, you could have an objective function that you want to transform to get a more stable, more interesting, easier fitness function. They tipically are the same, as you want to optimize the objective function, but don't take that for granted.
