@@ -106,7 +106,7 @@ There are different ways, each having pros and cons. There's a paper comparing t
 
 You can also try to extract the task another person is doing basing on the eye movements.
 
-There are many applications of high tracking:
+There are many applications of eye tracking:
 
 - **Medical diagnosis** (how doctors diagnose images);
 - **Scientific research**: you can record EEG
