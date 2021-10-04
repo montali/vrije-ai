@@ -26,7 +26,7 @@ The **strategic** part is composed of two components: the **choice of route** (p
 The **control** part is probably the most important: it involves the **distance** from the car in front of you. The general rule is maintaining 2 seconds of distance from the car in front of us. Another form of control is **lateral control**, i.e. the position on the road.
 Now that we have performed task analysis, let's try to understand the primary and secondary tasks. The primary task of driving is **lane keeping and hazard monitoring** (i.e. safely driving). The secondary tasks are anything else: navigation, scanning for signs, radio listening, talking to passengers...
 
-![image-20210928181325251](res\gibson&crooks.png)
+![image-20210928181325251](./res/gibson&crooks.png)
 
 A diagram created by Gibson&Crooks was developed in 1938 illustrates the tasks. The top part is **tracking road hazard monitoring and forward vision** (Primary Visual Attention Lobe). This is related to your attention, as the primary task is this. As mentioned, you have two ways of controlling your vehicle: longitudinal and lateral. 
 Everything else (bottom of the graph) are non-visual tasks, such as auditory, cognitive and motor tasks, which are competing with the primary task. Another important concept seen here is **TLC**, the time to lane crossing, and the **Time to Contact**, i.e. how much time it will take to collide with the vehicle in front of you. 
@@ -45,7 +45,7 @@ The **visibility** is the first thing to improve, and we can do that in 4 ways: 
 
 Visibility is very important, but how do we **measure it**? One of the measures is **eye tracking**. One study has researched how long it takes to carry out different visual tasks while driving, and you can see that the glance duration varies among the tasks. The general suggestion is that the glance should be shorter than 0.8s, and there should be more than 3s between glances. The risk of have an accident is roughly proportional to ${time_{glace}}^{1.5}$. 
 
-![image-20211003180625617](res\measure_visibility.png)
+![image-20211003180625617](./res/measure_visibility.png)
 
 The main task is always safely driving. This provides an interesting way to have some estimates of distraction. 
 One last thing to talk about is **resource competition**: this is important, and it has to do with our attention's limitations. All the different things in the car are competing with our attention to the road, for example head-up displays (speed and temperature projected on the windshield), hands-free cellphones, audio warnings, speech controls...
@@ -55,14 +55,14 @@ Using a driving simulator, we can do research on this. In a study from 2001, par
 - *single task* means driving and break when see red lights
 - the *dual task* concern having a conversation on the phone (using a hands-free system) or listening the radio while driving
 
-![image-20211004125418251](res\experiment_driving.png)
+![image-20211004125418251](./res/experiment_driving.png)
 
 The results showed a significant difference in the tasks, and we can see that in the cell phone conditions there are many more errors than in the radio control condition, and there are less error for the single task condiction. For the reaction times, the pattern is similar: participants took longer to detect the braking light in the cellphone condition!
 While this is already quite convincing, the researchers also had a follow-up looking at more direct ways to identify limitations in attentional resource: to do that they measured brain activity using EEG, and the ERP (Event Related Potential), components related to external/internal events.
 To plot these ERP, you need to extract the time snippet belonging to the event of interest, and average all the events. Doing that, several ERP components emerge: the one component of interest is P3 (happen around 300ms after stimulus). This has been studied extensively, and it's reflecting the amount of resources that are available for information processing. The interesting step was measuring how the resources measured by P3 are reduced by cell phone usage. This was conducted in a driving simulator with an EEG cap. ERP was time-locked to the onset of the braking light. The results showed that there's a huge difference from single task (driving only) to dual task (driving while using the cellphone).  When you are using the phone during driving, the same stimulus of see brake light induce a much smaller P3 signal.
 This suggests that people are _unintentionally blind_ while using a phone. 
 
-![image-20211004130600977](res\inattentional_blindness.png)
+![image-20211004130600977](./res/inattentional_blindness.png)
 
 ## Hazards
 Now, we can talk about how to improve our **hazard detection**. 
@@ -101,7 +101,7 @@ To summarize, the **safety improvements** can be presented in the following tabl
 
 They can be implemented in different sides (driver, vehicle, road) and times (predictive, during the crash, post-crash).
 
-![image-20211004150322026](res\safety_improvements.png)
+![image-20211004150322026](./res/safety_improvements.png)
 
 ## Intelligent systems
 There are several types of **intelligent systems** that make driving safer: the cars are starting to have systems like _lane departure warnings_, _lane centering_, _collision avoidance_. The cars are also equipped with _navigation systems_, which reduce the effort of the driver (even though it's a distraction, since driver need to monitor it), having up-to-date information about traffic, weather, services...
