@@ -51,7 +51,7 @@ Note that sometimes fewer alternatives are not faster: let's say I had morse cod
 
 That's different, for example, when designing a website: you want the user to choose between a low number of choices, maybe multiple times. Users don't like to have a lot of choices, but the user may also get frustrated to the depth of the decision tree. There's always a **balance** to find.
 
-Another thing is **response expectancy**: we have an expetatino about how the system is going to work, and we want to preserve that. For example, we like to have the same direction within stimula and response: we move the steering wheel right, the car goes right. In psychology there's a famous effect, **Simon effect**: you have to respond to a dot, appearing either on left or right, and you can respond either with your left or right hand. You will be way faster with the hand on the side of the dot.
+Another thing is **response expectancy**: we have an expectation about how the system is going to work, and we want to preserve that. For example, we like to have the same direction within stimula and response: we move the steering wheel right, the car goes right. In psychology there's a famous effect, **Simon effect**: you have to respond to a dot, appearing either on left or right, and you can respond either with your left or right hand. You will be way faster with the hand on the side of the dot.
 
 Another thing to mention is **speed-accuracy tradeoff**: when we try to make things quicker, we become less accurate. However, in many cases speed and accuracy are positively correlated: for example, we are more focused in high-stress situations. 
 

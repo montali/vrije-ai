@@ -3,8 +3,8 @@
 First of all, what's the aim of this course?
 
 - What are the **areas** that cognitive psychology can aid?
-- **Where in the process** cognitive psychology can help us?
-- **How** to apply the methods to solve the problems?
+- **Where in the process** can cognitive psychology help us?
+- **How** do we apply the methods to solve problems?
 
 Basically, everything is about interaction between humans and complex systems. We'll be able to practice on these things, and also in presenting analysis of the ideas that are seen. In this intro, we'll quickly cover human information processing (their limitations and peculiarities), eye tracking (useful in measuring human/machine interaction), transportation, distraction, multitasking, decision-making, automation (stress/workload).
 
@@ -24,7 +24,7 @@ The goal is quite clear: practice applying the knowledge of the course to solve 
 
 ### Exam
 
-There are two options at this point, the Uni has not decided yet:
+There are two options at this point, the Uni has not dec ided yet:
 
 - Normal exam on campus, digital via TestVision with 10 open-end questions (**open book**), checked for plagiarism
 - On **Canvas**, analysis of one real-life human-factors problem in which we analyze the problem, identify the possible causes, propose research into causes, suggest a solution and evaluate it
