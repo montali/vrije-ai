@@ -36,11 +36,11 @@ The **environment** is represented by a **problem**, **individuals** are **candi
 
 The components are not much: **evolvable objects** (what we do want to have in return, the **phenotype**), **genetic code** (**genotypes**, a representation of the solutions), **reproduction**, for which we'll need a fitness measure and a way of doing selection.
 
-Now, EC is **part of computer science** (or AI), and not **part of life sciences/biology**, even though being inspirational. EC can be applied in biological research (it still needs optimization and modeling), but AI evolutionary processes don't need to be biologically plausible.
+Now, EC is **part of computer science** (or AI), and not **part of life sciences/biology**, even though being biologically-inspired. EC can be applied in biological research (it still needs optimization and modeling), but AI evolutionary processes don't need to be biologically plausible.
 
-There's still some differences between natural evolution and EA: first of all, in nature, the **fitness** is observed a posteriori (i.e. in the eyes of the observer). Rabbits don't have signs stating their fitness. In EA, the user first determines **a priori** how to measure fitness, and that's the way it is. **Selection** is extremely more complex in nature: it depends on the environment, the weather, the food, and viability is tested continually (you can die any minute), while reproducibility is at discrete time (cannot have sex all day!)
+There's still some differences between natural evolution and EA: first of all, in nature, the **fitness** is observed a posteriori (i.e. in the eyes of the observer). Rabbits don't have signs stating their fitness. In EA, the user first determines **a priori** how to measure fitness, and that's the way it is. **Selection** is extremely more complex in nature: it depends on the environment, the weather, the food, and viability is tested continually (you can die any minute), while reproduction happens outside of definite time ranges.
 
-In EA **selection** is simply a randomized operator, and parent selection and survivor selection happen at discrete times (you cannot die at any time).
+In EAs, **selection** is simply a randomized operator, and parent selection and survivor selection happen at discrete times (you cannot die at any time).
 
 The **genotype-phenotype mapping** (the stage between the reproduction and the birth of the child) is extremely complex in nature, while it's a simple mathematical transformation in EA. Then, **variation operators**: in nature we have sexual/asexual reproduction with at most 2 parents, while in EA we can have any number of parents.
 

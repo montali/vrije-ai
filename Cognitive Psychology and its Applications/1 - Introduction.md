@@ -53,7 +53,7 @@ Even street planning and street signs are interesting to study on this side of c
 
 ## Engineering psychology or Human Factors Engineering
 
-There's an important difference between cognitive psychology and human factors: the first applies **scientific methods** to **understand human cognition** and how it works, helping us understand human information processing. Human factors are used to apply knowledge in the **design of systems** and accommodate limits of human performance, being concerned with **directly applied problems**. It does not always involve psychological perspectives, but physical constraints too.
+ There's an important difference between cognitive psychology and human factors: the first applies **scientific methods** to **understand human cognition** and how it works, helping us understand human information processing. Human factors are used to apply knowledge in the **design of systems** and accommodate limits of human performance, being concerned with **directly applied problems**. It does not always involve psychological perspectives, but physical constraints too.
 
 The intersection is **Engineering Psychology**, which has the aim of not only comparing possible designs, but also specifying capacities and limitations of the human. From these, the choice of a better design should be directly deductible.
 

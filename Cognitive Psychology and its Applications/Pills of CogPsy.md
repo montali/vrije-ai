@@ -1,0 +1,210 @@
+# Pills of CogPsy
+
+- It is characteristic of human nature that we notice when things go wrong more readily than when things go right
+- The goal of human factors is making the human interaction with systems one that enhances **performance**, increases **safety**, increases user **satisfaction**.
+- Human factors involves the study of **factors** and **development of tools** that facilitate the achievment of these goals, then translated into the concept of **usability**
+- Good human factors is just as relevant to **designing systems** that are effective, not only fixing them
+- **Engineering psychology** is a discipline within psychology, **human factors** is within engineering
+- **Engineering psychology** has the goal of understanding the human mind *as is relevant to the design of systems*, trying to infer generalizable psychological principles and theory
+- **Cognitive Psychology** uses scientific methods to understand **human cognition** and Human Information Processing
+- In WW2, we used to look for a human that suits the machine, considering humans as **Information Processing Systems**
+- HF engineers could improve a company's performance, expenses, leave rates
+- On the long term, it is more expensive to involve a HF engineer to fix things rather then designing them
+- **Human factors** places emphasis on **developing usable design principles**
+- **User-centered design** does not mean that the user **designs the product**
+- To perform front-end analysis, we need:
+  - **User analysis**: identify potential users, with a complete description of the population through *personas*
+  - **Environment analysis**: consider the particular environment in which the system acts
+  - **Function analysis**: identify the **basic functions** performed by the system
+  - **Task analysis**: specify the jobs, duties, tasks and actions that a person will be doing. Keep in mind the distintion between **goals, functions and tasks**: goals do not depend on technology!
+- **Tasks** can be **physical**, like setting the shutter, or **cognitive**, like deciding which shutter speed to use
+- Important information in task analysis are *hierarchical relationships* (task/subtasks), *information flow* (communication between people and roles), *task sequence* (order of tasks), *location and environmental conditions*
+- There are several ways of collecting data for task analysis:
+  - **Observation** consists in directly observing the user, as some people may omit details to avoid looking incompetent or just forget them
+  - **Think-aloud verbal protocol** might be *concurrent, retrospective* or *prospective*
+  - **Task performance with questioning**, keeping in mind that answering questions might disrupt the user from the task: retrospective analysis might be a good idea
+  - **Interviews**, either structured or unstructured
+  - **Surveys and questionnaires**
+- Brain functions are **widely spread** across the brain
+- **Perception** is responsible of the input of information in our system
+- All **visual stimuli** that the human can perceive may be described as a **wave of electromagnetic** energy, having *wavelength* (hue) and *amplitude* (brightness), which then gets transformed into electrochemical neural energy
+- Light rays pass through the **cornea**, a protective surface that absorbs light (more and more as we age)
+- The **pupil** adapts to light, closing and opening
+- **Accomodation** is the process with which we focus things, using *ciliary muscles* to straighten the lens
+- We have a **resting state of accomodation** in which these muscles do nothing
+- Image sizes are usually expressed as **visual angles**, obtainable as $arctan(\frac{H}{D})$
+- We have two types of sensors in our eyes, **rods** and **cones**: the latter are majorly found in the fovea, a $2°$ area, while the first are in the periphery
+- Cones are more closely spaced, meaning they have higher **acuity**: this means the fovea is more able to resolve detail
+- **Rods** are more sensitive, meaning that at night we see better outside of our fovea
+- **Rods** cannot discriminate different wavelenghts and they are therefore colorblind: as we use them mostly at night, colors are perceived badly in night vision
+- **Rods** lose their sensitivity fast when stimulated by light, and it takes long to regain it: tunnel driving is dangerous for this reason
+- **Cones** may become *hypersensitive* when they receive low stimulation: this explains glare in night driving
+- **Rods** are particularly insensitive to red lights, so red objects look darker at night
+- **Colorblind** people usually have 2 types of cones instead of 3
+- We have a **blind spot** located in the **optic disc**
+- **Gestalt laws of grouping** are the following: *proximity, symmetry, enclosure, closure, continuity, similarity, figure&ground, connection*
+- **Affordances** consist in the actions that we perceive as possible towards a system
+- **Eye movements** are categorizable in: *saccades*, *tremors*, *drifts*, *optokinetic reflexes*, *vestibular-ocular reflexes*, *smooth pursuit*, *vergence*, *microsaccades*
+- **Yarbus** did an experiment in 1967 to prove that humans use eye movements to **look for relevant information**
+- The distribution of attention in **reading** is **asymmetrical**
+- The first **mechanical eye tracker** was created bu Huey in 1898, consisting in little mirrors applied to the eyes
+- **Electromagnetic coils** are used for *ElectroOculoGraphy*
+- Two types of computer-based eye tracking are available: **model-based** and **appearance-based**
+- 4 features of eye trackers should be considered: **temporal resolution**, **spatial accuracy**, **spatial resolution**, **spatial precision**
+- **Latency** in the fixations is useful to understand the time it takes to initiate a movement
+- The more we're **fatigued**, the less straight our eye movements are
+- To measure visual search performance, we can talk about **AOI hits**, **AOI dwell time**, **AOI over time**
+- **Scan paths** are useful to understand how people perceive a webpage
+- We can **compare two scan paths** using *1-ratio*
+- **Contrast sensitivity** is defined as the reciprocal of the minimum contrast between a lighter and a darker area that can be detected
+- **Lower constracts** are more **difficult** to perceive
+- **Illumination** helps in perceiving contrast
+- **Fine print** is dangerous 
+- **Top-down** processing is perception based on *our knowledge and desire of what should be there*
+- To recreate 3D spaces in our head, we use **accomodation**, **binocular convergence** and **binocular disparity**
+- **Pictorial cues** are various: *linear perspective*, *interposition*, *relative size*, *lights and shading*, *textural gradients*, *relative motion* **LILTR**
+- *Depth perception* can be degraded when in dark conditions because visual cues help less
+- **Eye movements** are necessary to search the visual field, and can be divided into **pursuit** (constant speed that follows targets) and **saccades** (having initiation latency, movement time, destination/dwell)
+- Most of the time in saccades is spent during **dwells** and **initiations**
+- Usually **saccade** destinations are **driven by top-down** processes, but occasionally they don't
+- Dwell duration is governed by the **information contenxt** and the **ease of information extraction**
+- In visual search, we distinguish between **targets** and **nontargets**, scanning **serially** if the space is organized
+- **Bottom-up influence** is the conspicuity of the target
+- **Expectancies** consist in where the target is expected to be, based upon knowledge (think about alphabetic binary search)
+- **Signal Detection Theory** assumes the world contains noise and signals can be confused with it
+- The operator in SDT has to **discriminate noise from signal**
+- We can categorize Decision Making in **under risk**, **under certainty**, **under uncertainty**
+- The **Expected Value** gives us the possible outcome, multiplying the possible return by its probability
+- The **EV theory** is not accurate: **utility** value is **relative**
+- **Prospect theory** shows that preferences are not dependent on overall attributes but they are **reference dependent**
+- **Loss aversion** is the foundation for **prospect theory**, stating that we perceive value in loss and gain asymmetrically
+- Kahneman proposed that we have two systems in reasoning, a *heuristic system* and an *analytical system*
+- **Cognitive biases** are systematic errors in our judgement
+- *Confirmation bias* and *availability bias* are two examples of biases
+- **Bayes theorem** links a probability to its prior
+- **TPR** (sensitivity) represents the percentage of true positives over real positives, while **specificity** is the same for negatives
+- $d'$ is the distance between the normalized means N+S and N, get it with $z(H)-z(FA)$
+- $\beta$ is just the ratio between the value of $N+S$ where it intersect the criterion, and the same for $N$
+- A **criterion** is **conservative** when $\beta >1$, **liberal** when $\beta<1$
+- Operator's **expectancy** (linked to target prevalence) and **value** will shift the criterion
+- **Transportation** is a great example of human/machine interaction
+- **Driving** can be divided into three levels of activity: **strategic**, **tactical**, **control**
+- **Strategic** tasks focuses on the **purpose of the trip** and the driver's goals
+- **Tactical** focuses on the choice of **maneuvers** and immediate goals
+- **Control** focuses on the moment-to-moment operation of the vehicle
+- **Control can be divided** into lane keeping, speed keeping and hazard detection
+- **Time to line-crossing** and **time-to-contact** measure the danger of the control activity
+- **Visibility** in driving can be improved by 4 factors: **anthropometry**, **illumination**, **signage**, **resource competition**
+- **Anthropometry** is concerned with the design of better car internals
+- **Illumination** is necessary as night driving makes driving ten times more deadly
+- **Signage** has 4 main concerns: **cluttering**, **consistency**, **redundancy**, **readability**
+- **Resource competition** is challenged by radios, switches, maps, and can be described in terms of the **number and duration of glances**
+- **Dual task** driving (meaning we do something else) highly decrements performance
+- Using the **P3** component of *Event Related Potential* we can measure the amount of available resources
+
+- **Glances** should last less than **0.8 secs** and should happens at most every **3 secs**
+- **Simplifying controls**, using **speech recognition** and **head-up displays** could improve safety
+- We can introduce 3 types of hazards: **overcorrection**, **fatigue** and **speeding**
+- **Fatigue** lies in **low arousal** driven by circadian rhytms and long drives
+- The task of **vigilance** is mostly impaired
+- **Control loss** could be determined by narrow lanes, icy roads, fatigue
+- **Overcorrection** is proportional to the *bandwidth* of a correction, which is in turn related to speed
+- **Speeding** is a quadruple threat: it increases the likelihood of control loss, decreases the probability of hazard detection, increases the distance traveled in time, enhances damages in case of collision
+- **Speeding** causes are both **perceptual** and **cognitive**
+- **Higher seating** reduces the speed perception, as much as **adaptation**
+- **Expectancy** makes drivers think that accidents don't happen
+- **Individual factors** can be linked to **alcohol use**, **age**, **gender**
+- **Alcohol** is cause of 50% of deadly accidents in the US
+- **Young drivers** lack of driving skills and tend to speed, drink and be overconfident
+- **Old drivers** have information-processing **impairments**, as restricted field of **attention**, reduced **visual** capabilities, but subsede to this on the **strategic and tactical** levels
+- The **swiss cheese model** can make dangerous situations safer
+- **Dull, Dirty and Dangerous** tasks are the **best to be automated**
+- **Automation** characterizes the circumstances when a **machine** assumes a task that is otherwise performed by a human
+- **Failures** in automation could be more catastrophic, and are linked to **human factors**
+- Different levels of automation are available: **information acquisition, selection and filtering**, **information integration**, **action selection**, **control**
+- **Information acquisition, selection, filtering** is concerned with warning systems and alerts, such as automatic highlighting tools
+- **Information integration** replaces many cognitive processed of perception and working memory, providing **situation assesments, inference, diagnosis**
+- **Action selection** considers the **value of outcomes** and chooses options for the human to take
+- **Control and action execution** actually executes the actions
+- **Trust** measures the **perceived reliability** of an automated system
+- **Mistrust** occurs when trust is not directly related to reliability
+- **Overtrust** occurs when people trust the automation more than warranted
+- **Vigilance monitoring** is especially dangerous if linked with **overtrust**, as the arousal is low
+- **Situation awareness** tends to be lower when overtrust happens: the human is not an active participant anymore
+- **Skill loss** can happen with overtrust, being a long-term consequence
+- The circumstances in which some automated devices **fail** are the same that are the **most challenging** to humans 
+- **Automation** can reduce **job satisfaction**
+- **Human-centered automation** consists in keeping the **human informed**, keeping the **human trained**, keeping the **operator in the control loop**, **selecting the right automation stage**, making it **flexible** and maintaining a **positive management philosophy**
+- **Higher stage of automation** doesn't always lead to **higher performances**
+- The **speed** with which an action can be selected is influenced by the **possible alternatives**
+- The **Hick-Hyman** law states that reaction time has a logarithmic relationship with the number of choices: $RT = a + b\cdot log_2 (N)$
+- The **paradox of choice** states that the more choices we have, the more difficult it is to choose
+- We perceive **rapidly** information that we **expect**
+- We like to have the **same direction** within **stimulae** and **response**
+- The **Simon Effect** states that when responding to an input on either side, we use the hand on that side
+- **Stimulus-response compatibility** describes the expected relationship between the **location of a control** and the **location of the simulus**, composed by **location compatibility** and **movement compatibility**
+- Factors that make the **selection of a response longer** will make **errors more likely**
+- **Fitt's law** quantifies the difficulty of a movement and the time it requires: $MT = a + b \cdot log_2(2A/W)$ with $A$ being the distance and $W$ the target width
+- $2A/W$ is also known as **index of difficulty** of a movement
+- The **gain** is the ratio between the **delta** of **input** and the delta of **output**
+- **Touch screen displays** have gain equal to $1$
+- **Closed-loop control** is based on feedback, and it can be of 3 orders: position, velocity, acceleration
+- **Open-loop control** needs operators that have a **well-developed model** of the **system dynamics**
+- **Stressors** influence information **availability** and **processing**
+- A **stressor** produces a **psychological experience** (frustration/arousal), a **physiological change**, affects the **efficiency of information processing**, and may have **long-term consequences**
+- **Stressors** may have **direct** or **indirect effects**
+- **Direct effects** influence the quality of information or the precision of the response
+- **Stressors** may be **environmental** or **internal**
+- **Environmental stressors** can be caused by **motion** (high/low frequency vibration), **thermal**, **air quality**
+- **Hand vibration** from a handheld tool disrupts the precision
+- **Touch screens** are unpredictable when vibrations are present
+- **Low-frequency vibrations** could lead to motion sickness
+- **Excessive heat** produces decrements in perceptual motor tasks like tracking and reaction time
+- **Heat** has mainly **indirect effects**, affecting information processing
+- **Cold stress** could lead to distraction, but to direct effects related to the disruption of coordinated motor performance too
+- **Psychological stressors** could be concerned with potential injuries, embarassment...
+- **Cognitive appraisal** is heavily linked to stress, as an expert doesn't feel as stressed as a newbie, but may lead to overconfidence
+- **Physiological arousal** is documented by heart rate, pupil diameter and hormonal chemistry
+- An **inverted U** shows the link between arousal and performance, where the **Optimum Level of Arousal** is found
+- The **OLA** is higher for simpler tasks
+- Stress leads to **tunneling**, restricting the range of attention and concentrating very hard on one thing
+- **Tunneling** may be highly inappropirate, leading to focus on one single hypothesis rather than the search for creative solutions
+- **Working memory** is lost under stress
+- **Long-term memory** is less hampered and may even be enhanced, but this may not always be good (ice skids)
+- **Emergency instructions** should be easy to locate and salient
+- **Actions to take** should not rely on working memory
+- **Extensive training** can make emergency procedures a habit
+- **Life stress** is linked with financial difficulties, labor-management relations, family problems...
+- **Life stress** tends to have the individual divert the attention from the job to think about the source of stress
+- **Job-related** stress can be removed within the organization
+- **Stress** can be imposed by having **too much to do in too little time**
+- The concept of **workload** can be understood in terms of a ratio of **required time** over **available time**
+- **Task analysis** can be used to predict how much workload a human experiences
+- Human **performance** **decrements** when $\frac{TR}{TA}>1.0$
+- Four factors make task timelines challenging: **identification of task times**, **scheduling and prioritization**, **task resource demands and automaticity**, **multiple resources**
+- There may be **covert tasks** that we don't see when analyzing
+- Not all tasks are **equal** in their contribution to task overload
+- Tasks which use the **same resources interfere more**: two visual tasks interfere more than a visual and an auditory one
+- When suffering from overload, we see more **selectivity of input**, **important sources** of information given **more weight**, decrease in **accuracy**, decreasing use of **strategies**, **locking** into a single strategy
+- **Training** could make tasks faster
+- **Task management skills** are more important than task training, ensuring the relative importance
+- **Workload** could be better defined as **ratio between resources required and available**, being more complete than time-only analysis
+- **Workload assessment** can contribute to **predictive models**, to **usability analysis**, and be used to understand operator's **performance**
+- **Primary task measures** are influenced by mental workload, but for example a car driver might drive as good in different weather (having different mental workload though)
+- **Secondary task methods** measure **reserve capacity**, varying the difficulty of the secondary task
+- **Secondary task methods** may feel intrusive, so **embedded secondary tasks** are often better
+- **Physiological measures** can be interesting, basing on heart rate variability (linked to mental workload, as at higher levels the HR is more constant) or fixations on the dashboard
+- **Subjective measures** are good too
+- High mental workload can build up **fatigue**
+- **Fatigue** is a transition state between alertness and somnolence, clearly **degrading perfromance**
+- **Mental** and **physical** fatigue are relevant in scheduling rest breaked and duty cycles
+- Maintaining sustained attention to **vigilance tasks** in **low-arousal environments** can be as fatiguing as high workloads
+- Four **factors** influence vigilance tasks: **time**, **event salience**, **signal rate**, **arousal level**
+- To improve vigilance, we should **reduce shift lengths**, **enhance signals**, **introduce fake signals**, use **stimulants**
+- **Sleep deprivation** can highly impact performance
+- **Circadian rhytms** regulate our arousal in the day, being the lowest in early morning
+- **Visual inputs tasks** are particularly sensitive to sleep disruption, as much as decision making, innovation, creativity
+- **Central tasks** are more resilient to sleep deprivation than secondary tasks
+- **Sleepiness** is measured by the time it takes the individual to fall asleep
+- **Circadian disruption** may happen because of **jet lag** or **shift work**
+- **Sleep inertia** causes individuals to be less awake in the first 10 minutes after waking up

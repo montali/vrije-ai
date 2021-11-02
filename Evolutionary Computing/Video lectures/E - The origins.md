@@ -14,7 +14,7 @@ We need algorithms that can work on a wide range of problems, with fast translat
 
 Interestingly, the idea of using evolution in problem-solving is very old: Turing proposed it in 1948!
 
-In 1962, Bremermann proposed optimization through evolution and recombination. Rechenberg in 1964, Fogel, Owens and Walsh introduced **evolutionary programming** in 1965, and in 1875, Holland proposed **genetic algorithms**. Finally, in 1992 Koza proposed **genetic programming**.
+In 1962, Bremermann proposed optimization through evolution and recombination. Rechenberg in 1964, Fogel, Owens and Walsh introduced **evolutionary programming** in 1965, and in 1975, Holland proposed **genetic algorithms**. Finally, in 1992 Koza proposed **genetic programming**.
 
 There's EC conferences every year, the most famous being **EVOSTAR** and **GECCO**.
 
@@ -24,7 +24,7 @@ When talking about evolution, we know it's based on the **survival of the fittes
 
 The second important pillar of Darwinian evolution is **creating diversity** (reproduction), the physical and behavioural differences that affect your phenotype, partly determined by inheritance, partly by the development (nature vs. nurture). Some phenotypic traits will be passed on to the next generation, so next generations will have new, better combinations.
 
-_If you have variation, heredity and selection, you must have evolution_.
+_If you have variation, heritage and selection, you must have evolution_.
 
 We have combinations of traits that are better adapted, increasing the development chances (individuals are more prone to be fit). Variations occur through random changes, fueling diversity, having effect on the population. **An individual never evolves: it's the population that does so.**
 

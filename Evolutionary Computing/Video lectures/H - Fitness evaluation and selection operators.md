@@ -8,7 +8,7 @@ As we already know, **selection** is one of the two fundamental forces, being co
 
 In principle, there are two different population management models: the **generational** one and the **steady-state**. In the first one, we have _clear_ generations, which are not overlapping: the entire set of parents is discarded, and the offspring totally replaces the population. The latter keeps a part of the population, only replacing a part. This is _smoother_, and introduces a new concept, the **generation gap**. This is the **proportion of the population that is being replaced**, which, if equal to 1, is the same as a _Generational EA_.
 
-We have **two possible selections**: **parent** selection and **survivor** selection, and both are independent from the representation. As for selection, we can distinguish between **selection operators**, that define seleciton probabilities, and **selection algorithms**, which define how these probabilities are implemented. This distinction isn't always relevant, though.
+We have **two possible selections**: **parent** selection and **survivor** selection, and both are independent from the representation. As for selection, we can distinguish between **selection operators**, that define selection probabilities, and **selection algorithms**, which define how these probabilities are implemented. This distinction isn't always relevant, though.
 
 ## Fitness-Proportionate Selection (FPS)
 
@@ -113,6 +113,8 @@ The share is calculated for the individual's niche _friends_ only. If we had $sh
 Note that the reduction for 2 is bigger than the one 10 has.
 
 **Crowding** is another approach: it tries to distribute the individuals evenly among the niches, basing on the assumption that children will be close to parents. It uses a distance metric in either the phenotype or genotype space, taking two parents and 2 offspring, then making a _small tournament_ which sees one parent competing with a child, the other one with the other. To find these _families_, we have that $\mathrm{d}\left(\mathrm{p}_{1}, \mathrm{o}_{1}\right)+\mathrm{d}\left(\mathrm{p}_{2}, \mathrm{o}_{2}\right)<\mathrm{d}\left(\mathrm{p}_{1}, \mathrm{o}_{2}\right)+\mathrm{d}\left(\mathrm{p}_{2}, \mathrm{o}_{1}\right)$.
+
+We have two parents, and two offspring, then we number the two parents and offsprings such that the distances are as defined above. 
 
 The difference between these two approaches is the following: in _fitness sharing_, we'll see a higher number of individuals in the highest hills, while in _crowding_ the individuals are spread evenly throughout the hills. There is no general-purpose answer to *which is better*, you just have to try them and check the performances during *preliminary testing*.
 
