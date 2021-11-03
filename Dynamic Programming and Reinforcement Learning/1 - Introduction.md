@@ -19,11 +19,13 @@ All the content seen in class and in tutorial sessions are what's important for 
 
 We can see a short map of a city, and we're going to talk about the **shortest path problem**: basically, what Dijkstra solved. We're in the red car and want to get on the motorway, and there are distances. 
 
-TODO: insert map!
+![path](./res/path.png)
 
 You have to make **multiple decisions**, maybe determined upfront but maybe not. Every time you reach an intersection, you need a decision. There are possible *states* (current location), a *time* (measured in terms of steps), and finally, we know the problem is *deterministic*: it is completely predictable, so the *optimal policy* can be computed in advance (**offline**). The algorithms we're going to discuss are **dynamic programming** algos, but other algorithms exist (Dijkstra), even though they are **not generic**.
 
 Let's now look at the same grid, but now there are **traffic lights**: we're inserting non-determinism in our problem. Now, lengths are measured with a random variable: $2+D$ where $D$ is the RV, an unpredictable delay which is either 0 or 5: $P(D=0)=P(D=5)=0.5$.
+
+![path-tl](./res/path-tl.png)
 
 Commonly, we use the **shortest expected path**. We have a **model for the randomness**: we can compute the optimal policy, as we know the model for the randomness. We cannot predict the exact time, but we can still provide the optimal policy **upfront**. We still call this **offline**.
 
@@ -56,3 +58,55 @@ We have 3 options: *finite rewards*, *long-run average* or *discounted*. Suppose
 - **Finite**: just sum them, obtaining 10*(1+2+4)
 - **Long-run average**: average by time, $3.5*10$
 - **Discounted**: with discount factor $\beta \in (0,1): 1+2\beta + 4 \beta ^2 + \beta ^3 \dots$
+
+### Policies
+
+We need some notation, usually $\alpha$ is seen. A policy $\alpha$ determines, for every time and every station, the **action we take**. In other words: $\alpha: \mathcal{X} \times [1,T] \rightarrow \mathcal{A}$.
+
+The **optimal policy** $\alpha^*$ maximizes the total **expected reward**. In certain situations, we do the same for every time step: a policy is said **time-homogeneous** if it **does not depend on time**.
+
+### Transitions
+
+How do we move from state to state? We saw 3 different situations:
+
+- **Deterministic**: we can fully predict, i.e. given we know the policy, evolution in time can be fully predicted
+- **Stochastic**: next state is random with **known distribution**
+- **Learning**: distribution has to be learned (*implicit or explicit*, with the first)
+
+### Exploration vs. Exploitation
+
+We always have a tradeoff between these.
+
+## Shortest path example, revisited
+
+Now we can talk about this better:
+
+- **Time** is the number of traveled streets
+- **States** are represented by the street/crossing we're currently traveling on
+- **Rewards** are just $-1 \times distance$
+- **Actions** are just where to go
+- **Transitions** are deterministic
+- **Exploration/Exploitation**: should I try a new road? 
+
+### Inventory management
+
+Customer buy producgts one by one, orders are placed for replenishment. Orders arrive immediately/after 1+ days, we either (in case of insufficient stock) have backorders or lost sales. We can assume, for now, that orders arrive in 1 day, and sales are lost when stock is insufficient. 
+
+- **Time**: potential order moments (once a day)
+- **States**: current stock $x$
+- **Actions**: order size $a$
+- **Transitions**: we now have a **demand distribution**, i.e. probability that demand is $d$: $P(D=d)$ we have $x \rightarrow max(x-d, 0) + a$ with $a$ being what we ordered. However, if your demand is higher than the current stock, you're losing potential revenue (max between $x-d$ and $0$).
+- **Costs**: this is a cost setting, we assume these are modeling choices, suppose that at the beginning of the day you decide whether to order or not (if you do, you pay fixed costs $K$ for shipping), then you have *holding costs* $h$ per item (rent for the building) and *lost sales costs* ($c$ per lost sale)
+  - $K I(a>0) + hx + c\sum_{d>x} P(D=d)(d-x)$ with $I$ being an indicator function, i.e. if you order you pay $K$ otherwise you pay $0$, and the final quantity being the cost of lost sales (probability that demand is higher than stock)
+
+### Curse of dimensionality
+
+What if the lead time $L>1$ day? We need to stock in transit (and remember what I ordered, when), and we get a **multidimensional** space in the form $(stock, \# \textrm{arriving in day } i+1, \# \textrm{arriving in day } i+2...)$. This is a problem, as many real life problems have this: Bellman introduced this problem and its solution being **dynamic programming**. 
+
+## Dynamic Programming
+
+Bellman realized the presence of this curse of dimensionality, linked to Markov Decision Processes. Finally, in the 1990s Reinforcement Learning got out, consisting in heuristics for big problems. 
+
+How can we compute these? We have distances $d(x,y)$ between crossings/nodes in a graph. We assume infinite distance if there's no road/arc. We have a very central concept being $v_t (x)$ being the minimal distance from $x$ to destination $s$ in a maximum of $t$ steps. We need to come out with a **recursive way** of computing this function. If we're already at the destination, the value is 0: $v_t(s)=0$ for $t=0,1,\dots$.
+
+No other point can have $v_0(x)<\infty$ for $x\neq s$. **Other values are just composed as $v$ for the current and the next state.**
