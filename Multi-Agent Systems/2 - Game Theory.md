@@ -20,7 +20,7 @@ Let's look at a few non-trivial examples of games.
 
 ### Economy: Cournot's Duopoly model
 
-You have 2 companies making an interchangeable product (AH muesli vs Jumbo muesli). Withouth knowing the other company's strategy, both need to determine the quantity they need to produce. The unit price depends on the total produced quantity: if there's more in the market, the price goes down. The unit price, therefore, is given by $p(q_1, q_2) = \alpha - \beta (q_1+q_2)$.
+You have 2 companies making an interchangeable product (AH muesli vs Jumbo muesli). Without knowing the other company's strategy, both need to determine the quantity they need to produce. The unit price depends on the total produced quantity: if there's more in the market, the price goes down. The unit price, therefore, is given by $p(q_1, q_2) = \alpha - \beta (q_1+q_2)$.
 
 Suppose they can produce these at a unit cost of $c_1$ and $c_2$ respectively, which quantity should they produce to maximize the profit?
 
@@ -30,9 +30,9 @@ This illustrates various GT concepts. One cuts the cake, the other one makes the
 
 ### Prisoner's dilemma
 
-TODO copy text
+*Two suspects in a crime are put into separate cells. The police officer tells them: Currently you’re charged with trespassing which carries a jail sentence of one month. I know you were planning a robbery though, but cannot prove it – I need your testimony. If you confess and cooperate, I will drop the charges against you, but your partner will be charged to the fullest extent of the law: 12 months in jail. I’m offering the same deal to him. If you both confess, your individual testimony is less valuable, and you will get 8 months each.Penalty kick game*
 
-### Penalty kick game
+### Penalty kicks
 
 Studied extensively in sports literature, if the kicker kicks a penalty the goalkeeper doesn't have time and he just has to **guess** the direction. 
 
@@ -47,3 +47,72 @@ Suppose you've got 2 students working on a project, getting the same grade. Each
 ### Selfish routing in congestion games
 
 Suppose you have two cities, starting and termination point, and there are two roads. The cost/utility increases with the number of people that choose a road, while for the other it is constant at $1$. Everyone will choose the second hoping for a time that's less than an hour. This is linked to the **price of anarchy**: if someone told you which road to use, the average will be 3/4. The liberty of choosing makes the average 4/3.
+
+## Game theory
+
+Game theory studies **multiagent decision problems**, i.e. problems in which independent decision-makers interact.
+
+Agents have effect on others through their **utility.** Agents have **preferences**: they prefer some outcome over another, and this is encoded in their utility function. 
+
+There are *simultaneous games* in which players take a choice without knowing what the other player did, and *sequential games*.
+
+For the first, we introduce the idea of *payoff matrix*: we have two players, each having two actions, and the payoffs are encoded in a matrix. This only happens for **two agents**.
+
+If you wanted to give a forma definition of a **normal-form game**, we have a tuple $(N,A,u)$, wehre $N$ is a set of players, $A$ is a set of actions/strategies $A=A_{1} \times A_{2} \times \ldots \times A_{n}$ and an **action profile** will just be the set of actions taken by all the agents in a timestep. Finally, the **utility function** (ir payoff) matches each action profile with a given utility: $\mathrm{u}: A \longrightarrow \mathbb{R}^{n}$ where $\mathbf{u}=\left(u_{1}, u_{2}, \ldots, u_{n}\right)$ are the utilities for each agent. 
+
+Von Neumann and Morgenstern proved that utility (and **preference**) is transitive (if you prefer A to B and B to C, you prefer A to C) and that the utility function in non-deterministic cases is just the weighted sum of the outcomes by the probabilities: $u\left(\left\{\left(o_{1}: p_{1}\right),\left(o_{2}: p_{2}\right), \ldots,\left(o_{n}: p_{n}\right)\right\}\right)=\sum_{i=1}^{n} p_{i} u\left(o_{i}\right)$
+
+If we now consider Hotelling's game, we have two players and a **continuous action space**: each player can choose any position between 0 and 1.
+
+A player's **strategy** is the algorithm that determines the action for any stage of the game. A **pure strategy** means **you take a single action, and you play it**. There are more complicated strategies, called **mixed strategies**: here, we don't specify the particular strategy, but a **probability distribution** of the actions. Why would we do that? If you were playing heads and tails, you could be outsmarted by your opponent, who would recognize that you always play in a given way. In this case, the expected utility varies: we no longer have a *pure strategy* having utility equal to $u_{i}\left(a_{i}, a_{-i}\right)$, but rather the sum over the possible outcomes $E U_{i}\left(s_{i}, s_{j}\right)=\sum_{k=1}^{n} \sum_{\ell=1}^{m} u_{i}\left(a_{i k}, a_{j \ell}\right) p_{i k} p_{j \ell}$
+
+We're looking at the POV of a single, self-interested agent. What strategy should he adopt? It obviously depends on the actions of the other player too. 
+
+**Pareto optimality**, when dealing with **multiple objectives**, means that no *strategy dominates* the strategy. It is a **solution property**, and it means that a joint action/strategy if no other joint action/strategy profile **Pareto dominates it**. With **Pareto dominance**, we mean that $u_{i}\left(\mathrm{a}^{\prime}\right) \geq u_{i}(\mathrm{a})$ for all agents $i$ and $u_{j}\left(\mathrm{a}^{\prime}\right)>u_{j}(\mathrm{a})$ for some $j$.
+
+The **best response** from an agent $i$'s point of view, supposing we know the other's agent strategy $s_{-i}$ is defined as the strategy such that $\forall s_{i} \in S_{i}: \quad u_{i}\left(s_{i}^{*}, s_{-i}\right) \geq u_{i}\left(s_{i}, s_{-i}\right)$, meaning that the utility we get with that strategy and the opposer's is higher than any other possible strategy. The problem is, we **don't know the other agent's strategy**! Note that the Best Response is **not necessarily unique!** Let's say we had a strategu composed of two actions: a different mixture between them would mean two different strategies but the same utility.
+
+In Stag Hunt, if I know the other player is going to go for the Stag, my best response is not shooting. 
+
+We can now look at **continuous space games**: we have two players that need to collaborate on a homework assignment. The amount of work they put in is seen as $x,y$. The utility they get is the profit minus the cost: the cost of working one hour does not increase linearly but quadratically. To get the best response in this game, suppose we'd have an input $x$ for player 1, what would the input $y$ of player 2 to maximize the latter utility $u_2$?
+
+To find the maximum utility for a given $x$, we can look at the partial derivative of $u_2$ with respect to $y$: $\frac{\partial u_{2}}{\partial y}=2(1+b x)-2 y=0$ and to find the maximum we equate it to 0. We solve it for y and obtain an optimal response, given $x$, would be  $y^{*} \equiv B R_{2}(x)=1+b x$. If $x$ is specified, we can get the best response! Remember that $b$ is the sinergy factor, which if high, means that the two players work good together. 
+
+Let's now consider two strategies for player $i$, $s_i$ and $s_i'$, and the set $S_{-i}$ of all the strategy profile for the **other players**. We know that $s_i$ **strictly dominates** $s_i'$ if the utility we get from that is higher than the one gotten with $s_i'$ for every strategy in $S_{-i}$, meaning that **no matter what the other agents do, this is always the best strategy**. We can introduce the **weak dominance** as $u_{i}\left(s_{i}, s_{-i}\right) \geq u_{i}\left(s_{i}^{\prime}, s_{-i}\right) \quad \forall s_{-i} \in S_{-i}$ and $u_{i}\left(s_{i}, s_{j}\right)>u_{i}\left(s_{i}^{\prime}, s_{j}\right)$ for at least one $s_j \in S_{-i}$. This means that a strategy weakly dominates another if it is **better or equal when played against all the other players' strategies**, and **better for at least one**.
+
+A strategy is **dominated** if it is at least dominated by one strategy. A **strictly dominated** will never be the best response, and if we've got a strictly dominating strategy we don't have to worry about what the other opponents are going to do: **we're still doing our best**. 
+
+Taking the example of the prisoner's dilemma, we know that *Quiet* is a strictly dominated strategy, because, supposing you stay quiet, you get a -1 if the other one gets quite, but you get 0 if you confess (if the other guy is quiet). If the other confesses, quiet gives you -8. You can eliminate quiet from the strategy as it is strictly dominated. If both comply to this, they will both confess and get the worst *social welfare*. 
+
+## Iterated elimination of strictly dominated strategies (IESDS)
+
+IESDS is based on the assumption that all agents are rational (and they know it), they never play strictly dominated actions, hence, strictly dominated actions can be eliminated. We can get rid of the third column, and notice that middle dominates down. We eliminate down, and we see that the best solution is middle/centre. If you've got rational agents, they will simplify the game and arrive at this solution. 
+
+Watch out for *weakly dominated strategies*: if you eliminate those, you might be getting rid of some solutions you actually want to keep. 
+
+## Minimax and maximin
+
+This allows us to select strategies with specific guarantees/properties. The most natural interpretation is in *zero-sum games*: you either win, or lose, if you win, the other loses. In *general sum games* you have to think of the opponent as **malicious**, wanting to cause the maximum damage to you. 
+
+**Nash is a generalisation of this** which makes sense in general sum games. 
+
+Remember that we're looking from the POV of player $i$, we're always going to look at his utility and maximize it, therefore for $i$ strategies.
+
+Let's first have a look at minimax value. Player $i$ knows that player $j$ is vindictive and malicious, but player i has spy in player j camp who informs him of j's action ($s_j$). Player $i$ will then play his **best response** yielding utility $B R_{i}\left(s_{j}\right) \longrightarrow \max _{s_{i}} u_{i}\left(s_{i}, s_{j}\right)$.
+
+Basically, we know that $i$ will always choose the best action he has available (i.e. the row having highest value), so $j$ will pickthe column that yields the minimum for that, i.e. the minimum of the maximums. This is a **punishing** strategy, as $j$ knows that $i$ will always play his best move. 
+
+In order to be malicious, $j$ plays what minimizes the pay-off of $i$'s response!
+
+The total value that $i$ will get from that is actually the minimum of the maximum:$v_{i}^{m i m a}:=\min _{s_{j}} \max _{s_{i}} u_{i}\left(s_{i}, s_{j}\right)$.
+
+The difference between maximin and minimax is that one is a safety strategy, the other is a punishment strategy. You may want to play the latter in repeated games, as you might want to have the opposer understand that he needs to collaborate with you. 
+
+In fact, in MaxiMin, $i$ computes, for each action, the worst possible outcome, then chooses the action that maximises it. Basically, he's trying to secure the bag, maximising the payoff of the worst possible outcome. This is a safety strategy, as we're trying to minimise the gravity of bad things happening. We have a guarantee of payoff, **irrespective** of the actions taken by the other agents. 
+
+In maximin, the player always chooses the safest option, being the less risky one. In minimax, the player is more aggressive and wants to punish the other: to do so, it picks the move that minimizes the other's gain. 
+
+Note that by splitting simultaneous games into random sequential games, it makes sense that minimax and maximin agree: **Minimax theorem**.
+
+
+
