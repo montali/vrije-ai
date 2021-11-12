@@ -78,5 +78,6 @@ We offer a certain price $a$, then we sum the probability from 1 to $a$, with a 
 
 $V_{t}(x)=\max _{a=1, \ldots, n}\left\{\sum_{i=1}^{a} \lambda_{t}(i)\left(f_{a}+V_{t+1}(x-1)\right)+\left(1-\sum_{i=1}^{a} \lambda_{t}(i)\right) V_{t+1}(x)\right\}$
 
-Sometimes price fluctuate. How do we avoid prices going down?
+Sometimes price fluctuate. How do we avoid prices going down? 
 
+Note that we're summing the probabilities from 1 to a: this happens because we know that a customer willing to pay for 1 ()

@@ -114,5 +114,60 @@ In maximin, the player always chooses the safest option, being the less risky on
 
 Note that by splitting simultaneous games into random sequential games, it makes sense that minimax and maximin agree: **Minimax theorem**.
 
+The **regret** states how better we could have gone choosing a different alternative than what was choosen using minimax.
 
+## Nash equilibrium
 
+This is a generalization for minimax/maximin in non-zero-sum games. This was introduced by Nash in 1950, and it's not a solution, just a solution **condition**. This is formally a strategy $s_i^*$ for player $i$ when they're all playing the **best response to one another**. For every other strategy they could play, the (strict) Nash equilibrium strategy is (strictly) better. This is a **no regret/self-enforcing** strategy, in which no player has the incentive to unilaterally deviate. To compute it, we **find the mutual best responses**, and we check whether there's a cell that has best responses for both players. 
+
+We know, thanks to the NAsh theorem, that a **finite strategic game** has at **least one Nash equilibtrium**.
+
+A finite game could have mone or multiple pure-strategy NE. If there's just one, it's easy to decide. If there are multiple, we still need to pick one. *Schelling's focal points* help us in picking the one that is the *most natural*. 
+
+If there's a pure NE we find it looking at the table and finding *joint best responses.* 
+
+Let's though have a look at a *mixed NE*. Think of the *matching pennies example* (you either have to pick heads or tails, if both choose the same, the row player gets +1, the column player gets -1, while if you fail to coordinate the row player gets -1 and the column +1). If you try to see whether there are pure NE, you'll find out that there aren't. Because of NAsh's theorem, we know that there has to be a *mixed strategy equilibrium*. If you were to play this, it would actually be smart to randomize. If there's a slight discrepancy in the choices, the opponent may notice that you for example pick 51% heads and 49% tails. Intuitively, the equilibrium in this game would be playing both the choices with a probability of 50%. If you play that, the utility that you get will be the average of all the possible outcomes. You can do that for all the utilities and get 
+$$
+u_{1}\left(s_{1}, s_{2}\right)=\frac{1}{4} u_{1}(H, H)+\frac{1}{4} u_{1}(T, H)+\frac{1}{4} u_{1}(H, T)+\frac{1}{4} u_{1}(T, T)=0
+$$
+
+We can compute this by going back to the utility table, assuming that the row player plays heads with probability $p$ and tails with probability $1-p$. Similarly, column plays heads with $q$ and tails with $1-q$. 
+
+What is the expected outcome of column if the second player plays heads? It is $+1$ with probability $p$ (probability that 1 will play $H$), and $-1$ with probability $1-$. p
+$$
+u_2(p,H) = -1 p + 1(1-p) = 1-2p \\
+u_2(p,T) = p + (-1)(1-p)=2p-1
+$$
+We can do the same for the first player too. 
+
+It's useful to have a diagram of these utilities. On the $y$ axis you see the utility, on the $x$ the probability that the other player will play $H$. What you see is that the Best Response would be playing basing on the other player's probability of picking $H$, playing T if $q<\frac{1}{2}$ and $H$ if $q>\frac{1}{2}$. If $p$ appears to be exactly $\frac{1}{2}$, you get utility $0$. 
+
+We know $u_1$ is a function of $p$. We want to find the **maximum of it**, so we fix the partial derivative in $p$ to 0. 
+
+Drawing the diagrams (probability on x, utility on y) for mixed nash equilibria is always useful.
+
+We're looking to find the point in which the **expected utilities** are equal. 
+
+## Sperner's Lemma
+
+This is a nice example of a simple theorem with non-trivial results. Let's first explain it with a simple example, called *Rental Harmony*. Imagine that you've got the following problem: there's a shared house with two rooms, the red and green rooms. You and a friend want to rent that house but you have to decide how to split the rent. One room is nicer than the other onem so 50/50 is not an option. Think of this as an interval between 0 and 1, and start by dividing that in a number of subintervals, assigning your name to these points alternatively. You start with A, then B, and so on. It means the line itself represents the division of the rent: every point of this line can be represented by a couple of numbers, where 0,1 is the LHS and 1,0 is RHS. Any *convex combination* represents a point in-between. Imagine this is just like a wooden bar, so if you put all the weight on the left, the center of gravity will be on the left. IF you put them both in the center, it will be balanced. Imagine $0,1$ represents that the guy in the green room pays everything, while in $1,0$ red pays everything. Start with the LHS: A can decide which room he wants, and we check the first point, meaning that red is free. So A will definitely pick the red. On the other side of the interval, the player will pick the green room as that one is free. Suppose we nmow shift lightly to the right from the LHS: the red will still be a better choice, as it's almost free. Every time, players alternatively choose. At some point, **one point will be red and one green**: the division it represents is a situation in which A is happy with the red room, and B is happy with the green room. 
+
+Now, imagine that you have a colored triangle, made in such a way that all the N points have a different color. Nodes on outer edges have **two possible colors only**, while the inside is **free**. Sperner's lemma ensures that there will always be a small subtriangle having **3 differently colored endpoints**. **That's the point of rental harmony** (if we had 3 rooms). This point represents a division of the rent such that everyone is happy. 
+
+## Games with no nash equilibrium
+
+Imagine a sealed bid auction, where the highest bid gets the item, while the 2nd highest sets the price. We can construct games **without NE** to make sure that either the state space is not compact, or the utility function is not continuous. 
+
+A *Vickrey auction* is an example of this. This is a *sealed bid auction* for a single item, having a number of players that partake who have to *submit a sealed bid (envelope with their bid)*. The winner has to pay what the 2nd highest bid was. This avoids inflating the bids, pushing people to be honest on bids. *Truth-telling is a weakly dominant strategy*: there's no strategy being better than being honest with the price. Suppose we had a diagram with the bids from 1 to 4. Suppose the bids were public: you can now change your bid, suppose you wanted to partake. The winner will not change his price, as if he turned it down, he would now avoid winning, but if he turned it up, he would avoid obtaining anything better. 
+
+Suppose the second player (the one setting the price) can now change: if he changes it higher, he can win, but he will pay a price that is higher than what he thinks the item is worth. By turning it up (but less than the winner), he will only change the utility of the winner (raising their prices), but we know that *rational players only care about themselves*, so he doesn't want to punish the winner. 
+
+The last example is concerned with the strategic effects. Imagine the following penalty game: you've got a kicker and a goalie, and the kicker has to decide whether to kick L/R and the goalie has to decide whether to jump L/R simultaneously. The payoff table says that if the goal keeper matches the kicker, the rewards are 0,0, while if they mismatch it's 1,-1.
+
+Let's suppose, though, that the kicker is weaker on a side: if the kicker kicks left and the goalie goes right, there's less of a probability that the kicker will score. If the kicker decides to kick on his weak side, the probability of scoring is less than 1. 
+
+In order to find the NE, you can look at the $p$ value that makes the goalie indifferent: if you want to draw the curves, you check what to play for a given value of $p$.
+
+Note that eliminating **weakly dominated strategies** might erase **NE**s! You have to be careful to only eliminate **strictly dominated strategies**. 
+
+*Schelling's focal points* theorem shows that some equilibria are more natural than others.
