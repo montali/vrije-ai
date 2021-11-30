@@ -49,6 +49,27 @@ This stays mostly the same. If we look at the last step, A is going to accept a 
 We can generalize this to negotiation with $n$ rounds. If you look at it for *mildly impatient players*, you get an alternating sequence, reducing with time. If we have an infinite number of rounds, we can look at the infinity limit, with $
 \frac{1-(-\delta)^{n}}{1-(-\delta)}$ and $\lim _{n \rightarrow \infty} A(n)=\frac{1}{1+\delta}$. Remember that $\frac{1}{1-x} = 1 + x + x^2 + \dots$, a result that is useful to know and is responsible for the infinity limit. Note that $\lim _{n \rightarrow \infty} B(n)=\frac{\delta}{1+\delta}$. What we're looking at is what is called **first offer advantage**: the limit for $A(n)$ is always greater or equal than the limit for $B(n)$, as $\delta<1$. First offer advantage though disappears for very patient negotiators, as if $\delta\rightarrow1$ (the value of the item is not decreasing much). 
 
-Using the same logic, there's a same model by **Rubinstein** doing the smae but more general: YOU HAVE 2 agents, with infinite horizon. The time is valuable (there are discount factors for both agents, which may not be the same). What you see is that the optimal split (with the same sort of reasoning) would be $u_{1}=\frac{1-\delta_{2}}{1-\delta_{1} \delta_{2}} \quad$ and $\quad u_{2}=\frac{\delta_{2}\left(1-\delta_{1}\right)}{1-\delta_{1} \delta_{2}}$, with $u_1+u_2$ always adding up to $1$.
+Using the same logic, there's a same model by **Rubinstein** doing the smae but more general: you have 2 agents, with infinite horizon. The time is valuable (there are discount factors for both agents, which may not be the same). What you see is that the optimal split (with the same sort of reasoning) would be $u_{1}=\frac{1-\delta_{2}}{1-\delta_{1} \delta_{2}} \quad$ and $\quad u_{2}=\frac{\delta_{2}\left(1-\delta_{1}\right)}{1-\delta_{1} \delta_{2}}$, with $u_1+u_2$ always adding up to $1$.
 
 The **tragedy of bargaining** reckons that **the more time matters, the lower your share will be**: if you really need the item (impatient), your $\delta$ is close to $0$, so the quicker it loses the value, the lower your share will be. *The more you need it, the lower your share will be*. If the two deltas are the same, you reproduce the aforementioned formula for alternating offers bargaining.
+
+## Repeated games
+
+Having seen sequential games, we've seen **refinements of Nash** (subgames perfect equilibrium). We've also seen that the idea can be applied to bargaining, looking at the optimal solution for a given number of rounds, finally getting to the *Rubenstein* model.
+
+The idea now, is that rather than having a purely sequential game, we're playing the same game over and over again, learning from the previous games. The history influences our strategy. If you play a game once, there's no point in gaining reputation/knowledge, but when you're repeating it, you want to learn the best strategy. 
+
+There's a particular *one-shot game*, often called **stage game**, repeated either a finite amount of times or infinitely. In the first case, we can look at the total reward. In the infinite case, we cannot (that would add up to infinity), so the natural alternative is **discounted total reward** (rather thank taking the whole reward at every game, future games are discounted by a factor $0<\delta<1$).
+
+### Prisoner dilemma, again
+
+Now, is it natural for a player to defect? Suppose I keep on cooperating: if I cooperate, the payoff will be 3. It's rational to keep cooperating if the utility beats the one we get defecting. This means that $\delta$ has to be higher than $1/2$: the higher delta is, the less my rewards are discounted. If I'm sufficiently patient, it's actually rational for the selfish agent to cooperate. 
+
+If we look at the cartesian product (the table), it will have some redundant information. 
+
+You've got two ways to look at this: in the tree, we can say that every player *waits* until he knows what the other player plays. But if we look at all the possible outcomes (in the NF table), each player is making a complete and contingent plan. The table has redundant information: once you play A, it for example the row player plays G, you have two equal answers. There are multiple NE.
+
+Imagine that we're looking at the NE $A,G,C,F$. We indicate in green what the first player is going to do, red what the second is going to do. 
+
+Looking at the $B,H,C$ NE, what happens if player one plays $A$ instead of $B$? You would end up in utility 3,8. Again, utility goes down and that's not something you want. Imagine he would ge from $H$ to $G$: it doesn't matter as he would still be in 5,5. There's no point in changing that. Player 2 plays C, and if it goes from C to D nothing changes again. FGinally, suppose he goes from E to F: the utility goes from 5,5 to 1,0. This goes down, and that would means we have a NE. In fact, this decision depends on the fact that P1 would be choosing H in the final subgame (dotted circle), but he would never choose. The fact that he goes down, depends on an irrational decision from P1 choosing to pick H and not G. That is a **non-credible threat**: if he's rational, he will never pick that. This looks like a NE: whenever you change the strategy, you go down. But because of the sequentiality of the game, that becomes non-credible: this is the different between a NE and a **subgame perfect NE**. In sequential games, if we look at the matrix form, we can find all the NE then eliminate those that are not subgame perfect. In the game tree, we identify the subgames, then check the NE we found and see if they're subgame perfect. The idea of NE still exists, but it is refined.
+

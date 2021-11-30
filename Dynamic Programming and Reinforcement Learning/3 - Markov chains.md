@@ -50,3 +50,15 @@ Finally, a **theorem**: for aperiodic & communicating MCs, the time-average, lim
 
 Now, for every state we have similar balance. We have the summation over the action for a certain state y, and this should be interpreted as the probability of being in state $y$: you sum over the actions (probability of being in state $x$ and choosing action $a$). These are the **balance equations**. We then want to maximize the **total expected reward**, which is very similar to the markov reward chains, but now we sum over all the states and actions. This is now an optimization problem with a linear objective. Applying it to the example, we add action 2 from state 3. Looking back at the previous slide, we sum over x and as, summing the reward times the state/action. 
 
+### Policy iteration
+
+We have a policy $\alpha$, we define transition probabilities ($P_{\alpha}(x, y)=p(y \mid x, \alpha(x))$) and rewards ($r_{\alpha}(x)=r(x, \alpha(x))$. We solve the Poisson equation we have previously seen for this fixed policy, then we check whether we can improve the policy: we look for another policy, state by state, looking for a higher value of $r_{\alpha^{\prime}}+P_{\alpha^{\prime}} V_{\alpha}$. We terminate when we have found the optimal policy. Be careful: if you have two policies having the exact same $V,\phi$ you may alternate between these infinitely. 
+
+## Bellman equation
+
+We saw, on the previous slide, in the policy iteration, that this policy improvement step terminates if you have an optimal policy. Apparently, the maximizer is the optimal policy as long as $V$ is the optimal one. This holds for the optimal policy: $r_{\alpha_{*}}+P_{\alpha_{*}} V_{\alpha_{*}}=\max _{\alpha^{\prime}}\left\{r_{\alpha^{\prime}}+P_{\alpha^{\prime}} V_{\alpha_{*}}\right\}$. We also know that the following holds for every policy: $V_{\alpha_{*}}+\phi_{\alpha_{*}}=r_{\alpha_{*}}+P_{\alpha_{*}} V_{\alpha_{*}}$. We can combine these! $V+\phi=\max _{\alpha}\left\{r_{\alpha}+P_{\alpha} V\right\}$ which looks like the Poisson, with a maximisation. This is the **Bellman equation!** (in vector notation)
+
+There's nothing linear in here: there's a maximisation. 
+
+Note that $e$ is the unit vector, not Euler's number.
+
