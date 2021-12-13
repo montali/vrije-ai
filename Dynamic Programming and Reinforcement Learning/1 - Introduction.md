@@ -90,7 +90,7 @@ Now we can talk about this better:
 
 ### Inventory management
 
-Customer buy producgts one by one, orders are placed for replenishment. Orders arrive immediately/after 1+ days, we either (in case of insufficient stock) have backorders or lost sales. We can assume, for now, that orders arrive in 1 day, and sales are lost when stock is insufficient. 
+Customers buy products one by one, orders are placed for replenishment. Orders arrive immediately/after 1+ days, we either (in case of insufficient stock) have backorders or lost sales. We can assume, for now, that orders arrive in 1 day, and sales are lost when stock is insufficient. 
 
 - **Time**: potential order moments (once a day)
 - **States**: current stock $x$

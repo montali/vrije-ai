@@ -10,7 +10,7 @@ There is no **oracle**: it is not a supervised learning, you get some reward but
 
 ## Formalization
 
-When you've fot an agent interacting with an environment, what you care about are the states, the actions you take, and the transition that happen when you take an action. These could be deterministic or not. When you do that, you get an immediate reward, depending on the starting state, the action took, and the state you end up in. The **policy** $\pi$ specifies which action to take for each state. The goal is finding an **optimal policy**. An optimal policy describes the action for each state that will lead to the best final reward. 
+When you've got an agent interacting with an environment, what you care about are the states, the actions you take, and the transition that happen when you take an action. These could be deterministic or not. When you do that, you get an immediate reward, depending on the starting state, the action took, and the state you end up in. The **policy** $\pi$ specifies which action to take for each state. The goal is finding an **optimal policy**. An optimal policy describes the action for each state that will lead to the best final reward. 
 
 ## Markov Decision Processes
 
@@ -68,7 +68,7 @@ Linking everything together, the state-action value is a sum weighted by the tra
 
 Looking at the graph, you're in state and you have commited to take action $a$. Once you do that, you will transition to a new state with certain probability. If you're in $s$, the policy tells you you have a probability $\pi(a|s)$ of picking an action. We know we have committed to an action, and we have a probability of ending up in a given state with that action. The new value is just the sum of the possible transitions to the new state, and when we do that we end up in a new state $s'$  which has a discounted value $\left.\gamma \boldsymbol{v}_{\pi(} \boldsymbol{s}^{\prime}\right)$.
 
-What the Bellman equation does is combining these, substituting $q(s,a)$ with its expanded version. We're saying *to know what a value is in state $s$, we sum over all the possible actions we can take with their probability, and check the rewards for the possible states we'll reach*. 
+What the Bellman equation does is combining these, substituting $q(s,a)$ with its expanded version. We're saying *to know what a value is in state $s$, we sum over all the possible actions we can take with their probability, and check the rewards for the possible states we'll reach (equal to the instant reward and the discounted reward from there on $G_0(s')$)*.
 
 The Bellman equation for the state and value function is this, then: $v_{\pi}(s)=\sum_{a} \pi(a \mid s) \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right)\left[r\left(s, a, s^{\prime}\right)+\gamma v_{\pi}\left(s^{\prime}\right)\right]$. If you rewrite it by interchanging the summation, we get:
 
@@ -97,7 +97,7 @@ We now can get to the optimal state-action value function $q^{*}(s, a)=\sum_{s^{
 
 ### Model-based vs model free
 
-In the first, you assuem that the MDP is known: you solve the Bellman optimality equations and solve them. If you have no explicit model, you have to explore in order to gather information that will help you in solving the equations. You're initally just doing random search, but the Bellman equations allow you to propagate values back up.2 
+In the first, you assumed that the MDP is known: you solve the Bellman optimality equations and solve them. If you have no explicit model, you have to explore in order to gather information that will help you in solving the equations. You're initally just doing random search, but the Bellman equations allow you to propagate values back up.
 
 There are two problems depending on what you want to compute: if you're given a policy, and want to compute the value of each state, that is called *prediction*. The other is **optimal control**: you're not given a policy, and you want to find the best one. We can distinguish between cases in which we know the transitions, and those in which we don't (model-free). 
 
@@ -117,7 +117,7 @@ For a given policy, there's an actual q value corresponding to that. Our Q matri
 
 Monte Carlo methods introduce an idea of sampling to get approximations. When you have a function and want to compute the man under a distribution, you can either compute the integral, or sample and average (MC). When you look at this, something seems wrong: you'd expect to see $p$ also in sample points, but in the integral you're just weighing the function by the probability, while in the sampling the probability *reappears in the sampling*!
 
-You've fot a starting state, and you use the policy to generate an action. Along that path, you get rewards. 
+You've got a starting state, and you use the policy to generate an action. Along that path, you get rewards. 
 
 If you want to compute Q, there's only one difference: you can pick your action, and then apply the policy. 
 

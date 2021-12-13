@@ -2,7 +2,7 @@
 
 Getting back to our *deterministic shortest path example*, we can now define our value function $v_t(x)$ as the **minimal distance** from $x$ to $s$ in maximal $t$ steps. The **state** is represented by the *crossings* in the road network, and the **action** is just the next node to visit. The **costs** are the *distances* $d(x,y)$.
 
-In the **inventory example**, we define the value functino as the **minimal total costs from $t$ to $T$.** This is done recursively as: 
+In the **inventory example**, we define the value function as the **minimal total costs from $t$ to $T$.** This is done recursively as: 
 $$
 v_t(x) = \min _{a \geq d_{t} \times}\left\{h x+K \mid\{a>0\}+V_{t+1}\left(x-d_{t}+a\right)\right\}
 $$
@@ -20,7 +20,7 @@ Note that in the example the demand is always set at $2$.
 
 ## Dynamic programming - optimality
 
-We are in a deterministic, finite horizon setting, also knwon as *Bellman's principle of optimality*: what is optimal from $t+1$ is part of the optimal policy from $t$ on!
+We are in a deterministic, finite horizon setting, also known as *Bellman's principle of optimality*: what is optimal from $t+1$ is part of the optimal policy from $t$ on!
 
 If you think about the number of possible ways in which you can go from one timestep to the next, you're exponentially increasing the number of paths. 
 
@@ -60,7 +60,7 @@ We maximize the **expected reward** now, getting: $V_{t}(x)=\max _{a}\left\{r_{t
 
 ## Revenue management
 
-This is a problem introduced by airline looking for *dynamic pricing* strategies. The problem is *how many seats to offer in different booking classes and when to close them?*
+This is a problem introduced by airlines looking for *dynamic pricing* strategies. The problem is *how many seats to offer in different booking classes and when to close them?*
 
 Let's start by a simple example: we have 2 customers but one seat only, who arrive one-by-one, who pay 100 and 150. What are the consecutive prices? We should probably use 150/150: if we had different pricing, the first one would buy it at 100 and the seat would be gone. 
 

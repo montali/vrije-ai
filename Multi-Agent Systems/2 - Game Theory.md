@@ -1,4 +1,4 @@
-# Game theory
+#  Game theory
 
 This is one of the fundamental ideas behind MAS. We're first going to look at examples of interesting games, and we'll look at basic concepts for solving these. 
 
@@ -8,7 +8,7 @@ We all know **games**, used as entertainment or challenge, which though can also
 
 Game theory started as an **economic theory**, and in the meantime lots of nobel prizes have been won for it. Game theory provides a good level of abstraction for the study of socio-economic, political and biological phenomena. 
 
-The ingredients are the following: **players** (usually having opponents, either other agents, versions of yourself or even *chance events*), **rules** (certain actions cannot be done, others yes, resulting in a *payoff* or *utility*). Everyone wants to **maximize their pay-off**. There are two flavours, one being *non-cooperative* (you have selfish individuals, which are only concerned with their own utility, which may still result in accidental cooperation with self-enforcing agreements) or *cooperative* (they bind contracts for collaboration, counting on them). We can further divide this category into *non-trasferable utility* (the pay-off for each individual increases) and *transferable utility* (needing a fair way tl divide the additional value). The ***Shapley value*** captures this idea of *fair distribution*. 
+The ingredients are the following: **players** (usually having opponents, either other agents, versions of themselves or even *chance events*), **rules** (certain actions cannot be done, others can, resulting in a *payoff* or *utility*). Everyone wants to **maximize their pay-off**. There are two flavours, one being *non-cooperative* (you have selfish individuals, which are only concerned with their own utility, which may still result in accidental cooperation with self-enforcing agreements) or *cooperative* (they bind contracts for collaboration, counting on them). We can further divide this last category into *non-trasferable utility* (the pay-off for each individual increases) and *transferable utility* (needing a fair way to divide the additional value). The ***Shapley value*** captures this idea of *fair distribution*. 
 
 There are simple ways of representing utility, like matrices, decision trees... 
 
@@ -58,19 +58,21 @@ There are *simultaneous games* in which players take a choice without knowing wh
 
 For the first, we introduce the idea of *payoff matrix*: we have two players, each having two actions, and the payoffs are encoded in a matrix. This only happens for **two agents**.
 
-If you wanted to give a forma definition of a **normal-form game**, we have a tuple $(N,A,u)$, wehre $N$ is a set of players, $A$ is a set of actions/strategies $A=A_{1} \times A_{2} \times \ldots \times A_{n}$ and an **action profile** will just be the set of actions taken by all the agents in a timestep. Finally, the **utility function** (ir payoff) matches each action profile with a given utility: $\mathrm{u}: A \longrightarrow \mathbb{R}^{n}$ where $\mathbf{u}=\left(u_{1}, u_{2}, \ldots, u_{n}\right)$ are the utilities for each agent. 
+If you wanted to give a forma definition of a **normal-form game**, we have a tuple $(N,A,u)$, where $N$ is a set of players, $A$ is a set of actions/strategies $A=A_{1} \times A_{2} \times \ldots \times A_{n}$ and an **action profile** will just be the set of actions taken by all the agents in a timestep. Finally, the **utility function** (or payoff) matches each action profile with a given utility: $\mathrm{u}: A \longrightarrow \mathbb{R}^{n}$ where $\mathbf{u}=\left(u_{1}, u_{2}, \ldots, u_{n}\right)$ are the utilities for each agent. 
 
 Von Neumann and Morgenstern proved that utility (and **preference**) is transitive (if you prefer A to B and B to C, you prefer A to C) and that the utility function in non-deterministic cases is just the weighted sum of the outcomes by the probabilities: $u\left(\left\{\left(o_{1}: p_{1}\right),\left(o_{2}: p_{2}\right), \ldots,\left(o_{n}: p_{n}\right)\right\}\right)=\sum_{i=1}^{n} p_{i} u\left(o_{i}\right)$
 
 If we now consider Hotelling's game, we have two players and a **continuous action space**: each player can choose any position between 0 and 1.
 
-A player's **strategy** is the algorithm that determines the action for any stage of the game. A **pure strategy** means **you take a single action, and you play it**. There are more complicated strategies, called **mixed strategies**: here, we don't specify the particular strategy, but a **probability distribution** of the actions. Why would we do that? If you were playing heads and tails, you could be outsmarted by your opponent, who would recognize that you always play in a given way. In this case, the expected utility varies: we no longer have a *pure strategy* having utility equal to $u_{i}\left(a_{i}, a_{-i}\right)$, but rather the sum over the possible outcomes $E U_{i}\left(s_{i}, s_{j}\right)=\sum_{k=1}^{n} \sum_{\ell=1}^{m} u_{i}\left(a_{i k}, a_{j \ell}\right) p_{i k} p_{j \ell}$
+A player's **strategy** is the algorithm that determines the action for any stage of the game. A **pure strategy** means **you take a single action, and you play it**. There are more complicated strategies, called **mixed strategies**: here, we don't specify the particular strategy, but a **probability distribution** of the actions. Why would we do that? If you were playing *matching pennies*, you could be outsmarted by your opponent, who would recognize that you always play in a given way. In this case, the expected utility varies: we no longer have a *pure strategy* having utility equal to $u_{i}\left(a_{i}, a_{-i}\right)$, but rather the sum over the possible outcomes $E U_{i}\left(s_{i}, s_{j}\right)=\sum_{k=1}^{n} \sum_{\ell=1}^{m} u_{i}\left(a_{i k}, a_{j \ell}\right) p_{i k} p_{j \ell}$
 
 We're looking at the POV of a single, self-interested agent. What strategy should he adopt? It obviously depends on the actions of the other player too. 
 
-**Pareto optimality**, when dealing with **multiple objectives**, means that no *strategy dominates* the strategy. It is a **solution property**, and it means that a joint action/strategy if no other joint action/strategy profile **Pareto dominates it**. With **Pareto dominance**, we mean that $u_{i}\left(\mathrm{a}^{\prime}\right) \geq u_{i}(\mathrm{a})$ for all agents $i$ and $u_{j}\left(\mathrm{a}^{\prime}\right)>u_{j}(\mathrm{a})$ for some $j$.
+**Pareto optimality**, when dealing with **multiple objectives**, means that no *strategy dominates* the strategy. It is a **solution property**, and it means that a joint action/strategy if no other joint action/strategy profile **Pareto dominates it**. With **Pareto dominance**, we mean that $u_{i}\left(\mathrm{a}^{\prime}\right) \geq u_{i}(\mathrm{a})$ for all agents $i$ and $u_{j}\left(\mathrm{a}^{\prime}\right)>u_{j}(\mathrm{a})$ for some $j$. To get the Pareto optimal points, you draw lines from all the points to get which points are dominated by it: if a point lies in this rectangle, it is dominated. When points do not appear in any rectangle, they are Pareto optimal.
 
-The **best response** from an agent $i$'s point of view, supposing we know the other's agent strategy $s_{-i}$ is defined as the strategy such that $\forall s_{i} \in S_{i}: \quad u_{i}\left(s_{i}^{*}, s_{-i}\right) \geq u_{i}\left(s_{i}, s_{-i}\right)$, meaning that the utility we get with that strategy and the opposer's is higher than any other possible strategy. The problem is, we **don't know the other agent's strategy**! Note that the Best Response is **not necessarily unique!** Let's say we had a strategu composed of two actions: a different mixture between them would mean two different strategies but the same utility.
+The **best response** from an agent $i$'s point of view, supposing we know the other's agent strategy $s_{-i}$ is defined as the strategy such that $\forall s_{i} \in S_{i}: \quad u_{i}\left(s_{i}^{*}, s_{-i}\right) \geq u_{i}\left(s_{i}, s_{-i}\right)$, meaning that the utility we get with that strategy and the opposer's is higher than any other possible strategy. The problem is, we **don't know the other agent's strategy**! Note that the Best Response is **not necessarily unique!** Let's say we had a strategy composed of two actions: a different mixture between them would mean two different strategies but the same utility.
+
+To find Best Responses, you just check the maximum of every column for the first number, and the maximum of every row for the second.
 
 In Stag Hunt, if I know the other player is going to go for the Stag, my best response is not shooting. 
 
@@ -102,6 +104,10 @@ Let's first have a look at minimax value. Player $i$ knows that player $j$ is vi
 
 Basically, we know that $i$ will always choose the best action he has available (i.e. the row having highest value), so $j$ will pickthe column that yields the minimum for that, i.e. the minimum of the maximums. This is a **punishing** strategy, as $j$ knows that $i$ will always play his best move. 
 
+$j$ knows that $i$ will always pick the maximum of what he has available, so to punish him, he picks the strategy that will yield the lowest maximum.
+
+**J PUNISHES I**: the player knows that the opponent will always play his best, so he picks the move that minimizes that best.
+
 In order to be malicious, $j$ plays what minimizes the pay-off of $i$'s response!
 
 The total value that $i$ will get from that is actually the minimum of the maximum:$v_{i}^{m i m a}:=\min _{s_{j}} \max _{s_{i}} u_{i}\left(s_{i}, s_{j}\right)$.
@@ -114,19 +120,19 @@ In maximin, the player always chooses the safest option, being the less risky on
 
 Note that by splitting simultaneous games into random sequential games, it makes sense that minimax and maximin agree: **Minimax theorem**.
 
-The **regret** states how better we could have gone choosing a different alternative than what was choosen using minimax.
+The **regret** states how better we could have gone choosing a different alternative than what was choosen using minimax. To perform regret minimisation for the row player, we compute max(row)-min(row) and pick the row having the minimum value.
 
 ## Nash equilibrium
 
 This is a generalization for minimax/maximin in non-zero-sum games. This was introduced by Nash in 1950, and it's not a solution, just a solution **condition**. This is formally a strategy $s_i^*$ for player $i$ when they're all playing the **best response to one another**. For every other strategy they could play, the (strict) Nash equilibrium strategy is (strictly) better. This is a **no regret/self-enforcing** strategy, in which no player has the incentive to unilaterally deviate. To compute it, we **find the mutual best responses**, and we check whether there's a cell that has best responses for both players. 
 
-We know, thanks to the NAsh theorem, that a **finite strategic game** has at **least one Nash equilibtrium**.
+We know, due to the Nash theorem, that a **finite strategic game** has at **least one Nash equilibtrium**.
 
-A finite game could have mone or multiple pure-strategy NE. If there's just one, it's easy to decide. If there are multiple, we still need to pick one. *Schelling's focal points* help us in picking the one that is the *most natural*. 
+A finite game could have one or multiple pure-strategy NE. If there's just one, it's easy to decide. If there are multiple, we still need to pick one. *Schelling's focal points* help us in picking the one that is the *most natural*. 
 
 If there's a pure NE we find it looking at the table and finding *joint best responses.* 
 
-Let's though have a look at a *mixed NE*. Think of the *matching pennies example* (you either have to pick heads or tails, if both choose the same, the row player gets +1, the column player gets -1, while if you fail to coordinate the row player gets -1 and the column +1). If you try to see whether there are pure NE, you'll find out that there aren't. Because of NAsh's theorem, we know that there has to be a *mixed strategy equilibrium*. If you were to play this, it would actually be smart to randomize. If there's a slight discrepancy in the choices, the opponent may notice that you for example pick 51% heads and 49% tails. Intuitively, the equilibrium in this game would be playing both the choices with a probability of 50%. If you play that, the utility that you get will be the average of all the possible outcomes. You can do that for all the utilities and get 
+Let's though have a look at a *mixed NE*. Think of the *matching pennies example* (you either have to pick heads or tails, if both choose the same, the row player gets +1, the column player gets -1, while if you fail to coordinate the row player gets -1 and the column +1). If you try to see whether there are pure NE, you'll find out that there aren't. Because of Nash's theorem, we know that there has to be a *mixed strategy equilibrium*. If you were to play this, it would actually be smart to randomize. If there's a slight discrepancy in the choices, the opponent may notice that you for example pick 51% heads and 49% tails. Intuitively, the equilibrium in this game would be playing both the choices with a probability of 50%. If you play that, the utility that you get will be the average of all the possible outcomes. You can do that for all the utilities and get 
 $$
 u_{1}\left(s_{1}, s_{2}\right)=\frac{1}{4} u_{1}(H, H)+\frac{1}{4} u_{1}(T, H)+\frac{1}{4} u_{1}(H, T)+\frac{1}{4} u_{1}(T, T)=0
 $$

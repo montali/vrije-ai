@@ -4,7 +4,7 @@
 
 We are now travelling towards the **infinite horizon**!
 
-In past example, we were talking about **total reward** in a given amount of timesteps $\mathcal{T}=\{0, \ldots, T\}$
+In past examples, we were talking about **total reward** in a given amount of timesteps $\mathcal{T}=\{0, \ldots, T\}$
 
 We can still talk about **total rewards**, but in the infinite horizon we have **infinite timesteps**!
 
@@ -16,7 +16,7 @@ This chapter will be about **Markov chains**, which will serve as background for
 
 ## Markov Chains
 
-We have **infinite time**, states being $|x|<\infty$ with $X_t$ state at time $t$, no actions/rewards, and transitions without actions: $p(y \mid x)=P\left(X_{t+1}=y \mid X_{t}=x\right)$.
+We have **infinite time**, states being $|\mathcal{X}|<\infty$ (there's a finite number of states) with $X_t$ state at time $t$, no actions/rewards, and transitions without actions: $p(y \mid x)=P\left(X_{t+1}=y \mid X_{t}=x\right)$.
 
 We have some initial distribution, over the states with $\pi_0$ being the initial distribution (probability of state at $X_0$ being $x$ is $\pi_0(x)$).
 
@@ -36,9 +36,9 @@ If you take an example and look to find the distribution at $t=4$, we try to che
 
 ### Properties
 
-We call something a **path** in a Markov Chain if you have a chain of states for which all the transitions have a positive probabilities, i.e. a series of states that have a non-zero probability of happening. 
+We call something a **path** in a Markov Chain if you have a chain of states for which all the transitions have a positive probability, i.e. a series of states that have a non-zero probability of happening. 
 
-A MC is **communicating** if from any state I can reach any other state and back: there's a path between any  two given states, we don't know how long. We'll assume this to be true. We also assume the MC to be **aperiodic**, i.e. the gcd of lengths of all paths from a state to itself is 1. If you have a path of length 2 and one of length 3, the gcd is 1. But if all the paths have even length, then the GCD is 2 and we call it **periodic**.
+A MC is **communicating** if from any state I can reach any other state and back: there's a path between any two given states, we don't know how long. We'll assume this to be true. We also assume the MC to be **aperiodic**, i.e. the gcd of lengths of all paths from a state to itself is 1. If you have a path of length 2 and one of length 3, the gcd is 1. But if all the paths have even length, then the GCD is 2 and we call it **periodic**.
 
 To get the *time-average* distribution, you sum the distribution up to $t$ and then average. You can simply look at the limiting distribution to understand.
 

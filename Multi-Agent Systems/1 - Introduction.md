@@ -22,7 +22,7 @@ There also are optional books, just for *personal improvement*.
 
 ## Intro to MAS
 
-To introduce the matter, we first have to note that there are **five ongoin trends** within computing:
+To introduce the matter, we first have to note that there are **five ongoing trends** within computing:
 
 - **Ubiquity**: computing power is everywhere, you can connect to it
 - **Interconnection**
@@ -34,17 +34,15 @@ An **agent** is a computer system that is **situated in an environment** and is 
 
 A MAS is one that consists in **multiple agents** interacting with **each other**, and the **environment**. Generally, the agents may have **different goals**. In order to be successful, they need to **cooperate**. 
 
-TODO: insert green dots image
-
 The green dots are the agents, observing **part of the environment**. They have a *mental state*, i.e. what they've learned, and that determines how they're going to act. Initially, we'll look at non-cooperative agents. 
 
-There are several motivations. First of all, **tecchnological**: we're growing distributed, networked computer systems. Secondly, MAS are more **robust**: there's no single point of failure. They're scalable, flexible, and reusable. Applications vary: IoT, swarms of robots...
+There are several motivations. First of all, **technological**: we're growing distributed, networked computer systems. Secondly, MAS are more **robust**: there's no single point of failure. They're scalable, flexible, and reusable. Applications vary: IoT, swarms of robots...
 
 There's a second reason: they can be **seen as a model for interactivity in societies**, and they're useful in studying economics, social sciences and so on. 
 
 A typical question may be *how can cooperation emerge in societies of self-interested agents*?
 
-In a sense, MAS can be though of as **distributed AI**, as usually AI concerns itself with processes which are *cognitive*, while distributed AI is more concerned with social interaction.
+In a sense, MAS can be thought of as **distributed AI**, as usually AI concerns itself with processes which are *cognitive*, while distributed AI is more concerned with social interaction.
 
 There can be **two approaches**: suppose we give the individual capabilities to agents, what sort of global behaviour emerges (bottom-up). The alternative is *suppose we search for specific global characteristic, what sort of guidelines/conventions should we impose to agents to obtain interesting global properties*?
 
@@ -76,7 +74,7 @@ These are capable of **flexible** and **autonomous actions**: they can be **proa
 
 ## Environments
 
-We can talk about **accessible** environments, in whicvh the agent can **completely observe the whole environment** or **inaccessible**. Then, we can talk about **deterministic** vs **nondeterministic** environments: in the latter, we don't exactly know what happens in response to an action. We've got **static** and **dynamic environment**: in the first, the environment doesn't change **apart from the actions the agent takes**, while in the latter the environment changes without the agent doing anything. Finally, we can talk about **discrete** and **continuous**.
+We can talk about **accessible** environments, in which the agent can **completely observe the whole environment** or **inaccessible**. Then, we can talk about **deterministic** vs **nondeterministic** environments: in the latter, we don't exactly know what happens in response to an action. We've got **static** and **dynamic environment**: in the first, the environment doesn't change **apart from the actions the agent takes**, while in the latter the environment changes without the agent doing anything. Finally, we can talk about **discrete** and **continuous**.
 
 ## Main topics
 
